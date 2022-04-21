@@ -8,7 +8,8 @@ import './NavBar.css';
 
 function NavBar(props) {
     return (
-
+<header>
+<nav>
 <Navbar  className="headlogbg" bg="light" expand="lg">
   <Container>
     <Navbar.Brand href="#home"><img className="navbar-brand" src={logo} width="150px" alt="logo" /></Navbar.Brand>
@@ -32,6 +33,8 @@ function NavBar(props) {
     </Navbar.Collapse>
   </Container>
   </Navbar>
+  </nav>
+  </header>
     );
 }
 
