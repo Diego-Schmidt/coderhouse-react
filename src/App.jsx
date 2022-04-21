@@ -8,8 +8,9 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <ItemListContainer />
+      <ItemListContainer greeting="Saludos"/>
       <header className="App-header">
+      
       </header>
       <main>
         
