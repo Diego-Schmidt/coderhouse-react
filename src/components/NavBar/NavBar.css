@@ -1,12 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 #carrito {
     padding-right: 30px;
   }
   .nav-link:hover {
     background-color: #d17600;
+    
   }
   .nav-link {
     padding-top: 5%;
+    text-decoration: none;
+    color: inherit;
   }
   .cabeza {
     background: #be7e07e5;
@@ -16,3 +25,5 @@
     background: #dd9d12;
     background: radial-gradient(circle, #ddc612 0%, rgba(221, 133, 18, 0.884) 35%, rgba(226, 98, 6, 0.5746673669) 100%);
   }
+
+  

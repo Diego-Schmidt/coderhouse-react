@@ -1,42 +1,37 @@
 import React from 'react';
+import logo from './logo.webp';
+import CartWidget from '../CartWidget/CartWidget';
+import { Navbar, NavDropdown, Container, Nav } from 'react-bootstrap';
 import './NavBar.css';
 
 
 
 function NavBar(props) {
     return (
-<nav> 
-<div className="container-fluid headlogbg">
-<img className="navbar-brand" src={`${process.env.PUBLIC_URL}/assets/images/logo.webp`} width="150px" alt="logo" />
-</div>
-      <div className="navbar nav-stacked navbar-expand-md navbar-expand-sm navbar-light bg-light">
-         <div className="container-fluid cabeza mx-auto">
-            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-            </button>
-            <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-               <div className="navbar-nav mx-auto">
-                  <a className="nav-link active" aria-current="page" href="#">
-                     <h4>Inicio</h4>
-                  </a>
-                  <a className="nav-link" href="#">
-                     <h4>Menú</h4>
-                  </a>
-                  <a className="nav-link" href="#">
-                     <h4>Servicios</h4>
-                  </a>
-                  <a className="nav-link" href="#">
-                     <h4>Acerca</h4>
-                  </a>
-                  <a className="nav-link" href="#">
-                     <h4>Contacto</h4>
-                  </a>
-               </div>
-            </div>
-            <a href="#"><img id="carrito" src={`${process.env.PUBLIC_URL}/assets/images/carrito.svg`} alt="carritodecompras" heigth="" /></a>
-         </div>
-         </div>
-      </nav>
+
+<Navbar  className="headlogbg" bg="light" expand="lg">
+  <Container>
+    <Navbar.Brand href="#home"><img className="navbar-brand" src={logo} width="150px" alt="logo" /></Navbar.Brand>
+    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+    <Navbar.Collapse id="basic-navbar-nav">
+      <Nav className="me-auto">
+        <Nav.Link href="#home">Inicio</Nav.Link>
+        <NavDropdown title="Menú" id="basic-nav-dropdown">
+          <NavDropdown.Item href="#action/3.1">Hamburguesas</NavDropdown.Item>
+          <NavDropdown.Item href="#action/3.2">Papas</NavDropdown.Item>
+          <NavDropdown.Item href="#action/3.3">Batatas</NavDropdown.Item>
+          <NavDropdown.Divider />
+          <NavDropdown.Item href="#action/3.4">Bebidas</NavDropdown.Item>
+        </NavDropdown>
+        <Nav.Link href="#link">Servicios</Nav.Link>
+        <Nav.Link href="#link">Acerca</Nav.Link>
+        <Nav.Link href="#link">Contacto</Nav.Link>
+        
+      </Nav>
+      <CartWidget />
+    </Navbar.Collapse>
+  </Container>
+  </Navbar>
     );
 }
 
