@@ -36,3 +36,31 @@
     transform: rotate(360deg);
   }
 }
+
+.back1, .back1-2 {
+  -webkit-animation: slide 3s ease-in-out infinite alternate;
+          animation: slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, #e2c678 50%, #ff9900 50%);
+  bottom: 0;
+  left: -50%;
+  opacity: 0.5;
+  position: fixed;
+  right: -50%;
+  top: 0;
+  z-index: -1;
+}
+
+.back1-2 {
+  background-image: linear-gradient(-60deg, #e29a78 50%, #ff4800 50%);
+}
+
+.back2 {
+  animation-direction: alternate-reverse;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+}
+
+.back3 {
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+}

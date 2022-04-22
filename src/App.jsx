@@ -8,13 +8,17 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <ItemListContainer greeting="Saludos"/>
-      <header className="App-header">
-      
-      </header>
       <main>
-        
+      <ItemListContainer greeting="Bienvenido al Menú de Habemus Papa!"/>
+      <hr />
       </main>
+      
+            	     <div className="back1">
+<div className="back1 back2">
+<div className="back1 back3">
+			</div>
+          </div>
+         </div>
     </div>
   );
 }
