@@ -10,7 +10,8 @@ const ItemCount = ({stock, initial, onAdd}) => {
   const handleAgregar = () => {
     if (count < stock) {
       setCount(count + 1)
-      onAdd(count + 1)
+      
+      
     } else {
         swal("No hay stock suficiente", "", "error");
     } 
@@ -20,7 +21,8 @@ const ItemCount = ({stock, initial, onAdd}) => {
   const handleRestar = () => {
     if (count > initial) {
       setCount(count - 1)
-      onAdd(count - 1)
+      
+      
     }
   }
 
