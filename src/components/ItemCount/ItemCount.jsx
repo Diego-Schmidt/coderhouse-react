@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { Container, Button } from 'react-bootstrap';
-import hamburguesa from '../../assets/images/hamburguesa.png';
+import { Button } from 'react-bootstrap';
 import swal from 'sweetalert';
 import './ItemCount.css';
 
-const ItemCount = ({stock, initial, onAdd}) => {
+
+
+const ItemCount = ({stock, initial, onAdd, itemName}) => {
   const [count, setCount] = useState(initial)
 
   const handleAgregar = () => {
@@ -27,19 +28,13 @@ const ItemCount = ({stock, initial, onAdd}) => {
   }
 
 const handleOnAdd = () => {
-        swal(count + " items agregados al carrito", "", "success");
+        swal(count + " " + itemName + " agregado al carrito", "", "success");
     } 
 
 
   return (
-    <>
-      <Container>
-      <div className="card producto shadow-lg p-3 mb-5 bg-warning rounded">
-  <img src={hamburguesa} className="card-img-top" alt="hamburguesa" />
-  <div className="card-body">
-    <h5 className="card-title">Hamburguesa con Cheddar</h5>
-    <p className="card-text">Hamburguesa con queso cheddar acompañada de batatas fritas</p>
-    <div className="input-group mb-3">
+    <>  
+      <div className="input-group mb-3">
         <div className="input-group-prepend">
           <Button onClick={handleRestar} className="text-white btn btn-outline-secondary">-</Button>
         </div>
@@ -49,9 +44,6 @@ const handleOnAdd = () => {
         </div>
       </div>
       <Button onClick={handleOnAdd} className="text-white btn btn-outline-secondary">Agregar al carrito</Button>
-  </div>
-</div>
-        </Container>
     </>
   )
 }
