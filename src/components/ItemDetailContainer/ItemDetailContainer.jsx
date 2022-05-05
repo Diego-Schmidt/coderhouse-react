@@ -4,20 +4,49 @@ import productosDB from '../../data/productosDB.js';
 import ItemDetail from '../ItemDetail/ItemDetail.jsx';
 import { useParams } from 'react-router-dom';
 
-function getProducto() {
+function getProducto(itemid) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
+            if (itemid) {
+            const arrayFiltered = productosDB.find((item) => {
+                return item.id === itemid;
+            });
+            resolve(arrayFiltered);
+            } else {
             resolve(productosDB);
+            }
         }, 2000);
     });
 }
+
+
+
+// function getProducto(itemid) {
+
+//     return new Promise(( resolve, reject) => {
+
+//         setTimeout(() => {
+
+//             const productoFound = productosDB.find( (id) => {
+
+//                 return item.id === itemid;
+
+//             })
+//             resolve(productoFound);
+
+//         }, 1000);
+
+//     });
+
+// }
+
 
 function ItemDetailContainer( {greeting, items} ) {
     const [producto, setProducto] = useState([]);
     const { itemid } = useParams();
     useEffect(() => {
-    getProducto(itemid).then(respuestaPromise => {
-        setProducto(respuestaPromise[itemid]);
+    getProducto(parseInt(itemid)).then(respuestaPromise => {
+        setProducto(respuestaPromise);
     });
     // .catch(errorPromise => {
     //     console.error(errorPromise);

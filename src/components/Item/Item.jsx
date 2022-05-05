@@ -3,10 +3,6 @@ import { Button, Card, Badge } from 'react-bootstrap';
 import ItemCount from '../ItemCount/ItemCount';
 import {LinkContainer} from 'react-router-bootstrap'
 
-
-
-
-
 function Item({ item, stock, name, price, ingredients, picture } ) {
   return (
     <Card className="bg-warning shadow-lg p-3 mb-3 mr-2 ml-2 rounded">
