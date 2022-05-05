@@ -1,17 +1,22 @@
 import './App.css';
 import NavBar from './components/NavBar/NavBar'
-// import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import { BrowserRouter, Route, Routes }  from 'react-router-dom';
 
 
 function App() {
   return (
     <>
+    <BrowserRouter>
       <NavBar />
       <main>
-      {/* <ItemListContainer greeting="Bienvenido al Menú de Habemus Papa!"/> */}
-      <ItemDetailContainer />
+      <Routes>
+        <Route path="/item/:itemid" element={<ItemDetailContainer greeting="Detalle de producto"/>} />  
+        <Route path="/" element={<ItemListContainer greeting="Menú de Habemus Papa!"/>} />
+        <Route path="/category/:categoryid" element={<ItemListContainer greeting="Categoría"/>} />
+      </Routes>
       <hr />
       <div className="back1">
 <div className="back1 back2">
@@ -20,6 +25,7 @@ function App() {
           </div>
          </div>
       </main>
+      </BrowserRouter>
     </>
   );
 }

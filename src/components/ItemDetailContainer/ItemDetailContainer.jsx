@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from 'react-bootstrap';
 import productosDB from '../../data/productosDB.js';
 import ItemDetail from '../ItemDetail/ItemDetail.jsx';
+import { useParams } from 'react-router-dom';
 
 function getProducto() {
     return new Promise((resolve, reject) => {
@@ -14,15 +15,15 @@ function getProducto() {
 
 function ItemDetailContainer( {greeting, items} ) {
     const [producto, setProducto] = useState([]);
-
+    const { itemid } = useParams();
     useEffect(() => {
-    getProducto().then(respuestaPromise => {
-        setProducto(respuestaPromise[0]);
+    getProducto(itemid).then(respuestaPromise => {
+        setProducto(respuestaPromise[itemid]);
     });
     // .catch(errorPromise => {
     //     console.error(errorPromise);
     // });
-    }, []);
+    }, [itemid]);
 
     return (
         <section id="menu" className="py-5 text-center container">
