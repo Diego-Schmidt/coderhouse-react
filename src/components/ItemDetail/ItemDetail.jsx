@@ -15,7 +15,7 @@ function ItemDetail({  detalle } ) {
         <img src={detalle.picture} className="d-block mx-lg-auto img-fluid" alt={detalle.name} width="700" height="500" loading="lazy" />
       </div>
       <div className="col-lg-6">
-        <h1 className="display-5 fw-bold lh-1 mb-3">{detalle.name}</h1>
+        
         <p className="lead">{detalle.description}</p>
         
         <Badge bg="success">{detalle.price} $</Badge>

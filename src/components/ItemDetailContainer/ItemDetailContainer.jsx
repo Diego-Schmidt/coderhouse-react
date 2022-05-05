@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button } from 'react-bootstrap';
 import productosDB from '../../data/productosDB.js';
 import ItemDetail from '../ItemDetail/ItemDetail.jsx';
 import { useParams } from 'react-router-dom';
@@ -29,12 +28,11 @@ function ItemDetailContainer( {greeting, items} ) {
         <section id="menu" className="py-5 text-center container">
         <div className="row py-lg-5">
             <div className="col-12">
-            <h1 className="fw-light">Menú</h1>
-            <p className="lead text-muted">Desafío Item Detail</p>
-            <p>
-              <Button className="btn btn-primary my-2">Ver promos</Button>
-              <Button className="btn btn-secondary my-2">Combos</Button>
-            </p>
+            <h1 className="fw-light">{producto.name}</h1>
+            <p className="lead text-muted">{producto.category}</p>
+            <p className="lead text-muted">Detalle del producto</p>
+            
+         
            
           </div>
         </div>
