@@ -2,7 +2,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/Diego-Schmidt/coderhouse-react">
-    <img src="https://diego-schmidt.github.io/coderhouse-react/static/media/logo.31c5442b01f1a5c30e92.webp" alt="Logo" width="80" height="80">
+    <img src="https://diego-schmidt.github.io/coderhouse-react/static/media/logo.31c5442b01f1a5c30e92.webp" alt="Logohabemuspapagit " width="184" height="74">
   </a>
 
   <h3 align="center">Habemus Papa! React - Curso de CoderHouse</h3>
