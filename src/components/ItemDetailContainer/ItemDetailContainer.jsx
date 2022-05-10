@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import productosDB from '../../data/productosDB.js';
 import ItemDetail from '../ItemDetail/ItemDetail.jsx';
 import { useParams } from 'react-router-dom';
-import css from './ItemDetailContainer.css';
+// import css from './ItemDetailContainer.css';
 
 function getProducto(itemid) {
     return new Promise((resolve, reject) => {

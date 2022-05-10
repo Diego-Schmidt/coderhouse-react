@@ -29,6 +29,7 @@ const ItemCount = ({stock, initial, onAdd, itemName}) => {
 
 const handleOnAdd = () => {
         swal(count + " " + itemName + " agregado al carrito", "", "success");
+        onAdd(count);
     } 
 
 

@@ -1,6 +1,8 @@
+import { useState } from 'react';
 import { Badge} from 'react-bootstrap';
 import ItemCount from '../ItemCount/ItemCount';
-import css from './ItemDetail.css';
+import { Link } from 'react-router-dom';
+// import css from './ItemDetail.css';
 
 
 
@@ -8,11 +10,16 @@ import css from './ItemDetail.css';
 
 
 function ItemDetail({  detalle } ) {
+  const [isInCart, setIsInCart] = useState(false);
+  function onAdd(count) {    
+    console.log(`Agregaste ${count} al carrito`);
+    setIsInCart(true)
+}
   return (
     <div className="container bootstrap snippets bootdey">
     <div className="row">
       <div className="col-sm-6 col-md-6 push-bit">
-        <a href="#" className="gallery-link"><img src={detalle.picture} width="700" heith="250" alt={detalle.name} className="img-fluid push-bit" /></a>
+        <img src={detalle.picture} width="700" heith="250" alt={detalle.name} className="img-fluid push-bit" />
         
       </div>
       <div className="col-sm-6 col-md-6 push-bit">
@@ -35,7 +42,12 @@ function ItemDetail({  detalle } ) {
           {detalle.ingredients}
         </p>
         <hr />
-        <ItemCount stock={detalle.stock} initial={1} itemName={detalle.name} />
+        { isInCart? 
+          <Link to="/cart"><Badge>Terminar compra</Badge></Link> 
+          :
+        <ItemCount onAdd={onAdd} stock={detalle.stock} initial={1} itemName={detalle.name} />
+        
+      }
         
       </div>
     </div>
