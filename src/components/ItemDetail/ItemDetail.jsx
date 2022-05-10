@@ -1,6 +1,6 @@
-import { Badge } from 'react-bootstrap';
+import { Badge} from 'react-bootstrap';
 import ItemCount from '../ItemCount/ItemCount';
-// import css from './ItemDetail.css';
+import css from './ItemDetail.css';
 
 
 
@@ -9,18 +9,33 @@ import ItemCount from '../ItemCount/ItemCount';
 
 function ItemDetail({  detalle } ) {
   return (
-    <div className="container col-xxl-8 px-4 py-5">
-    <div className="row flex-lg-row-reverse align-items-center g-5 py-5">
-      <div className="col-10 col-sm-8 col-lg-6">
-        <img src={detalle.picture} className="d-block mx-lg-auto img-fluid" alt={detalle.name} width="700" height="500" loading="lazy" />
+    <div className="container bootstrap snippets bootdey">
+    <div className="row">
+      <div className="col-sm-6 col-md-6 push-bit">
+        <a href="#" className="gallery-link"><img src={detalle.picture} width="700" heith="250" alt={detalle.name} className="img-fluid push-bit" /></a>
+        
       </div>
-      <div className="col-lg-6">
-        
-        <p className="lead">{detalle.description}</p>
-        
-        <Badge bg="success">{detalle.price} $</Badge>
-    <Badge>Stock {detalle.stock}</Badge>
-          <ItemCount stock={detalle.stock} initial={1} itemName={detalle.name} />
+      <div className="col-sm-6 col-md-6 push-bit">
+        <div className="clearfix">
+          <div className="pull-right">
+          <h1><strong className="text-success">{detalle.name}</strong><br /></h1>
+          <h3><strong className="text-success">{detalle.category}</strong><br /></h3>
+            <span className="h2"><strong><Badge bg="success">Precio {detalle.price}$</Badge></strong></span>
+          </div>
+          <span className="h4">
+            
+            <small><Badge bg="info">stock {detalle.stock}</Badge></small>
+          </span>
+        </div>
+        <hr />
+        <p>
+          {detalle.description}
+        </p>
+        <p>
+          {detalle.ingredients}
+        </p>
+        <hr />
+        <ItemCount stock={detalle.stock} initial={1} itemName={detalle.name} />
         
       </div>
     </div>

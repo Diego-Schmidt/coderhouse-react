@@ -15,6 +15,7 @@ function NavBar(props) {
 <Navbar  className="headlogbg" bg="light" expand="lg">
   <Container>
   <LinkContainer to="/"><Navbar.Brand><img className="navbar-brand" src={logo} width="150px" alt="logo" /></Navbar.Brand></LinkContainer>
+  
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="me-auto">
@@ -32,9 +33,11 @@ function NavBar(props) {
         <Nav.Link href="#link">Contacto</Nav.Link>
         
       </Nav>
-      <CartWidget />
+      
     </Navbar.Collapse>
+    <CartWidget />
   </Container>
+  
   </Navbar>
   </nav>
   </header>

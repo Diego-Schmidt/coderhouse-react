@@ -1,0 +1,4 @@
+.bg-degrade {
+    background: #dd9d12;
+    background: radial-gradient(circle, #ddc612 0%, rgba(221, 133, 18, 0.884) 35%, rgba(226, 98, 6, 0.5746673669) 100%);
+}
