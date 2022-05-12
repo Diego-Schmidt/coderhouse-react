@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button, Card, Badge } from 'react-bootstrap';
-import ItemCount from '../ItemCount/ItemCount';
+// import ItemCount from '../ItemCount/ItemCount';
 import {LinkContainer} from 'react-router-bootstrap'
 
 function Item({ item, stock, name, price, ingredients, picture } ) {
@@ -15,7 +15,7 @@ function Item({ item, stock, name, price, ingredients, picture } ) {
     <Badge bg="success">{price} $</Badge>
     <Badge>Stock {stock}</Badge>
     </Card.Body>
-    <ItemCount stock={stock} initial={1} itemName={name} />
+    {/* <ItemCount stock={stock} initial={1} itemName={name} /> */}
     <LinkContainer to={`/item/${item}`}><Button className="btn btn-info">Ver detalles</Button></LinkContainer>
   </Card>
    

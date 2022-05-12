@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import { Badge} from 'react-bootstrap';
+import { Badge } from 'react-bootstrap';
 import ItemCount from '../ItemCount/ItemCount';
 import { Link } from 'react-router-dom';
 // import css from './ItemDetail.css';
+import useCartContext from '../../store/CartContext';
 
 
 
@@ -11,9 +12,13 @@ import { Link } from 'react-router-dom';
 
 function ItemDetail({  detalle } ) {
   const [isInCart, setIsInCart] = useState(false);
+  const { addToCart } = useCartContext();
   function onAdd(count) {    
-    console.log(`Agregaste ${count} al carrito`);
-    setIsInCart(true)
+    console.log(`Agregaste ${count} ${detalle.name} al carrito`);
+    setIsInCart(true);
+    addToCart(detalle, count);
+    console.log("Agregado al cart", detalle, count);
+
 }
   return (
     <div className="container bootstrap snippets bootdey">
@@ -43,7 +48,11 @@ function ItemDetail({  detalle } ) {
         </p>
         <hr />
         { isInCart? 
-          <Link to="/cart"><Badge>Terminar compra</Badge></Link> 
+          <>
+          <ItemCount onAdd={onAdd} stock={detalle.stock} initial={1} itemName={detalle.name} />
+          <p></p>
+          <Link to="/cart"><Badge bg="success"><h5>Ver carrito</h5></Badge></Link> 
+          </>
           :
         <ItemCount onAdd={onAdd} stock={detalle.stock} initial={1} itemName={detalle.name} />
         

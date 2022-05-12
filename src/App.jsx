@@ -5,12 +5,14 @@ import Cart from './components/Cart/Cart';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import { BrowserRouter, Route, Routes }  from 'react-router-dom';
+import { CartContextProvider } from './store/CartContext';
 
 
 function App() {
   return (
     <>
-    <BrowserRouter>
+    <CartContextProvider>
+    <BrowserRouter basename="/coderhouse-react">
       <NavBar />
       <main>
       <Routes>
@@ -29,6 +31,7 @@ function App() {
          </div>
       </main>
       </BrowserRouter>
+      </CartContextProvider>
     </>
   );
 }

@@ -5,10 +5,14 @@ import { Navbar, NavDropdown, Container, Nav } from 'react-bootstrap';
 import './NavBar.css';
 // import Link from 'react-router-dom';
 import {LinkContainer} from 'react-router-bootstrap'
+import { useContext } from 'react';
+import useCartContext from '../../store/CartContext.jsx';
 
 
 
 function NavBar(props) {
+  const { contextFunction  } = useCartContext();
+  contextFunction();
     return (
 <header>
 <nav>
