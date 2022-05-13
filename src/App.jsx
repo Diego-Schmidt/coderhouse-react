@@ -30,7 +30,7 @@ function App() {
           </div>
          </div>
       </main>
-      </BrowserRouter>
+      </HashRouter>
       </CartContextProvider>
     </>
   );
