@@ -5,10 +5,12 @@ const CartContext = createContext();
 const { Provider } = CartContext;
 const useCartContext = () => useContext(CartContext);
 
+
+
 export function CartContextProvider( {children} ) {
     const [cart, setCart] = useState([]);
     const addToCart = ( item, cant ) => {
-        if (isInCart()){
+        if (isInCart(item.id)){
            const newCart = cart.map(cartItem => {
                 if (cartItem.id === item.id){
                 const copyItem = {...cartItem};
@@ -27,6 +29,10 @@ export function CartContextProvider( {children} ) {
     }
 }
 
+const isInCart = (id) => {
+    return cart.some((item) => item.id === id);
+  };
+  
     const removeFromCart = (id) => {
     const newCart = [...cart];
     const cartFilter = newCart.filter(item =>{
@@ -35,11 +41,9 @@ export function CartContextProvider( {children} ) {
     setCart(cartFilter);
     }
     
-    const isInCart = (id) => {
-    const cartList = [...cart];
-    // cartList.some(id);
-    return cartList.some(item => item.id === id);
-    }
+  
+     console.log("Este es el console log de isInCart", isInCart());
+     console.log("Este es el contenido de cart", cart);
     
     //    const cantInCart = (id) => {
 //        return false;

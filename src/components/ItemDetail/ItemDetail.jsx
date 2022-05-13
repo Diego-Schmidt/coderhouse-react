@@ -17,7 +17,7 @@ function ItemDetail({  detalle } ) {
     console.log(`Agregaste ${count} ${detalle.name} al carrito`);
     setIsInCart(true);
     addToCart(detalle, count);
-    console.log("Agregado al cart", detalle, count);
+    console.log("Agregado al carrito", detalle, count);
 
 }
   return (
