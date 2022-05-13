@@ -4,7 +4,7 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import Cart from './components/Cart/Cart';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
-import { BrowserRouter, Route, Routes }  from 'react-router-dom';
+import { HashRouter, Route, Routes }  from 'react-router-dom';
 import { CartContextProvider } from './store/CartContext';
 
 
@@ -12,7 +12,7 @@ function App() {
   return (
     <>
     <CartContextProvider>
-    <BrowserRouter basename="/coderhouse-react">
+    <HashRouter basename="/coderhouse-react">
       <NavBar />
       <main>
       <Routes>
@@ -30,7 +30,7 @@ function App() {
           </div>
          </div>
       </main>
-      </BrowserRouter>
+      </HashRouter>
       </CartContextProvider>
     </>
   );
