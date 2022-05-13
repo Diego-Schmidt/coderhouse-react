@@ -12,7 +12,7 @@ function App() {
   return (
     <>
     <CartContextProvider>
-    <BrowserRouter basename="/coderhouse-react/#">
+    <BrowserRouter basename="/coderhouse-react">
       <NavBar />
       <main>
       <Routes>
