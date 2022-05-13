@@ -41,14 +41,6 @@ const isInCart = (id) => {
     setCart(cartFilter);
     }
     
-  
-     console.log("Este es el console log de isInCart", isInCart());
-     console.log("Este es el contenido de cart", cart);
-    
-    //    const cantInCart = (id) => {
-//        return false;
-//    }// Vacía el carrito
-
     const clearCart = () => {
         setCart([]);
     }
