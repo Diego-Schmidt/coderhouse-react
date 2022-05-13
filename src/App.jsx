@@ -12,7 +12,7 @@ function App() {
   return (
     <>
     <CartContextProvider>
-    <HashRouter>
+    <HashRouter basename="/coderhouse-react">
       <NavBar />
       <main>
       <Routes>
