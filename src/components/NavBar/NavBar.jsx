@@ -23,14 +23,14 @@ function NavBar(props) {
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="me-auto">
-        <LinkContainer to="/"><Nav.Link href="#home">Inicio</Nav.Link></LinkContainer>
+        <LinkContainer to="/#"><Nav.Link href="#home">Inicio</Nav.Link></LinkContainer>
         <NavDropdown title="Menú" id="basic-nav-dropdown">
-        <LinkContainer to="/"><NavDropdown.Item>Todo</NavDropdown.Item></LinkContainer>  
-        <LinkContainer to="/category/hamburguesas"><NavDropdown.Item>Hamburguesas</NavDropdown.Item></LinkContainer>
-        <LinkContainer to="/category/papas"><NavDropdown.Item>Papas</NavDropdown.Item></LinkContainer>
-        <LinkContainer to="/category/batatas"><NavDropdown.Item>Batatas</NavDropdown.Item></LinkContainer>
+        <LinkContainer to="/#"><NavDropdown.Item>Todo</NavDropdown.Item></LinkContainer>  
+        <LinkContainer to="/#/category/hamburguesas"><NavDropdown.Item>Hamburguesas</NavDropdown.Item></LinkContainer>
+        <LinkContainer to="/#/category/papas"><NavDropdown.Item>Papas</NavDropdown.Item></LinkContainer>
+        <LinkContainer to="/#/category/batatas"><NavDropdown.Item>Batatas</NavDropdown.Item></LinkContainer>
           <NavDropdown.Divider />
-          <LinkContainer to="/category/bebidas"><NavDropdown.Item>Bebidas</NavDropdown.Item></LinkContainer>
+          <LinkContainer to="/#/category/bebidas"><NavDropdown.Item>Bebidas</NavDropdown.Item></LinkContainer>
         </NavDropdown>
         <Nav.Link href="#link">Servicios</Nav.Link>
         <Nav.Link href="#link">Acerca</Nav.Link>
