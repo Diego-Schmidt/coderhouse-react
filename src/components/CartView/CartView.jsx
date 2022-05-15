@@ -1,14 +1,43 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, Card, Badge, Container } from 'react-bootstrap';
-import { useState } from 'react';
-import { useContext, useEffect } from 'react';
 import useCartContext from '../../store/CartContext';
 import { Link } from 'react-router-dom';
+import swal from 'sweetalert';
 
 
 function CartView({ greeting }) {
-    const { cart, addToCart, removeFromCart, clearCart, isInCart } = useCartContext();
+    const { cart, removeFromCart, clearCart, itemsTotal, precioTotal } = useCartContext();
+
+    const handleVaciar = () => {
+      swal({
+        position: 'center',
+        icon: 'success',
+        background: '#DFA822',
+        title: `Carrito vaciado`,
+        Button: false,
+        timer: 2500
+      })
+      clearCart();
+        } 
+
+        const handleRemove = () => {
+          cart.forEach(itemCart => {
+          swal({
+            position: 'center',
+            icon: 'success',
+            background: '#DFA822',
+            title: `${itemCart.cant} ${itemCart.name} quitada del carrito`,
+            Button: false,
+            timer: 2500
+          })
+          removeFromCart(itemCart.id)
+        })
+        
+            } 
+
+
+
     console.log("CartView", cart);
     if (cart.length === 0) {
       return <section id="Carrito" className="py-5 text-center container">
@@ -24,19 +53,25 @@ function CartView({ greeting }) {
 else { 
   return (
     <section id="carrito" className="py-5 text-center container">
-        <div className="row py-lg-5">
-        <div className="col-12">
-          <p>{greeting}</p>
-          <p></p>
-          <Link to="/">regresar al menú</Link>
-          <p></p>
-          <p><Button onClick={clearCart}>Vaciar carrito</Button></p>
-        </div>
-        </div>
-        <div className="album py-5 bg-warning">
-          
-          <div className="container">
-            <div className="row row-cols-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-3 g-3">
+   <div className="row py-lg-5">
+     <div className="col-12">
+       <p>{greeting}</p>
+       <p></p>
+       <Link to="/">regresar al menú</Link>
+       <p></p>
+       <p></p>
+       <div><Badge bg="info"><h5>Total de items: {itemsTotal()}</h5></Badge></div>
+       <p></p>
+        <div><Badge bg="info"><h5>Costo Total: {precioTotal()} $</h5></Badge></div>
+       <p></p>
+       <p>
+         <Button onClick={handleVaciar}>Vaciar carrito</Button>
+       </p>
+     </div>
+   </div>
+   <div className="album py-5 bg-warning">
+     <div className="container">
+       <div className="row row-cols-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-3 g-3">
         {cart.map( itemCart => {
         return (
               <Container key={itemCart.id}>
@@ -45,11 +80,11 @@ else {
                   <Card.Img variant="top" src={itemCart.picture} />
                   <Card.Body>
                     <Card.Text> {itemCart.ingredients} </Card.Text>
-                    <Badge bg="success">Precio Unidad {itemCart.price} $</Badge>
+                    <Badge bg="success"><h3>Precio Unidad {itemCart.price} $</h3></Badge>
                     <p></p>
-                    <Badge bg="info">Precio x {itemCart.cant} {itemCart.price * itemCart.cant} $</Badge>
+                    <Badge bg="info"><h3>Precio x {itemCart.cant} {itemCart.price * itemCart.cant} $</h3></Badge>
                   </Card.Body>
-                  <Button onClick={() => removeFromCart(itemCart.id)} className="btn btn-danger">Eliminar</Button>
+                  <Button onClick={handleRemove} className="btn btn-danger">Eliminar</Button>
                 </Card>
               </Container>
         )

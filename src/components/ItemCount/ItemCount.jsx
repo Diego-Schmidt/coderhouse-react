@@ -29,7 +29,15 @@ const ItemCount = ({stock, initial, onAdd, itemName}) => {
   }
 
 const handleOnAdd = () => {
-        swal(count + " " + itemName + " agregado al carrito", "", "success");
+  swal({
+    position: 'center',
+    icon: 'success',
+    background: '#DFA822',
+    title: `${count} ${itemName} agregado al carrito`,
+    Button: false,
+    timer: 2500
+  })
+        
         onAdd(count);
     } 
 

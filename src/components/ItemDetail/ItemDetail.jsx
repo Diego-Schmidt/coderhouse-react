@@ -53,7 +53,7 @@ if (detalle.picture === undefined) {
         <hr />
         { isInCart? 
           <>
-          <ItemCount onAdd={onAdd} stock={detalle.stock} initial={1} itemName={detalle.name} />
+          {/* <ItemCount onAdd={onAdd} stock={detalle.stock} initial={1} itemName={detalle.name} /> */}
           <p></p>
           <Link to="/cart"><Badge bg="success"><h5>Ver carrito</h5></Badge></Link> 
           </>

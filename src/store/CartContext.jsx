@@ -41,6 +41,26 @@ const isInCart = (id) => {
 
 // Leemos la cantidad de unidades del item específico
 
+const cantItems = (id) => {   
+    const total = 0;
+    cart.forEach(item => total + item.cant);
+    return total;
+    };
+
+    function precioTotal() {
+        let total = 0;
+        cart.map ( (i) => total += i.price * i.cant );
+        return total;
+      }
+    
+    function itemsTotal() {
+        let cantidad = 0;
+        cart.map(i => cantidad += i.cant);
+        return cantidad;
+      }
+
+    
+
   const ItemCartCant = (id) => {
     let prodInCart = cart.find((item) => item.id === id);
     return prodInCart.cant;
@@ -63,7 +83,7 @@ const isInCart = (id) => {
 
     const contextFunction = () => console.log("Contexto listo");
 return (
-    <Provider value={ { contextFunction, cart, addToCart, removeFromCart, clearCart, isInCart, getItemFromCart, ItemCartCant } }>
+    <Provider value={ { contextFunction, cart, addToCart, removeFromCart, clearCart, isInCart, getItemFromCart, ItemCartCant, cantItems, precioTotal, itemsTotal } }>
     {children}
     </Provider>
     
