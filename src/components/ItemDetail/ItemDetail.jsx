@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Badge } from 'react-bootstrap';
+import { Badge, Spinner } from 'react-bootstrap';
 import ItemCount from '../ItemCount/ItemCount';
 import { Link } from 'react-router-dom';
 // import css from './ItemDetail.css';
@@ -19,6 +19,10 @@ function ItemDetail({  detalle } ) {
     addToCart(detalle, count);
     console.log("Agregado al carrito", detalle, count);
 
+}
+
+if (detalle.picture === undefined) { 
+  return <Spinner animation="border" role="status"> <span className="visually-hidden">Cargando...</span></Spinner>
 }
   return (
     <div className="container bootstrap snippets bootdey">

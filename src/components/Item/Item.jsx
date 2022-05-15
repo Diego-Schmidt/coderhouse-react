@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button, Card, Badge } from 'react-bootstrap';
 // import ItemCount from '../ItemCount/ItemCount';
-import {LinkContainer} from 'react-router-bootstrap'
+import {LinkContainer} from 'react-router-bootstrap';
 
 function Item({ item, stock, name, price, ingredients, picture } ) {
   return (

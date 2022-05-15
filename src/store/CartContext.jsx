@@ -5,8 +5,6 @@ const CartContext = createContext();
 const { Provider } = CartContext;
 const useCartContext = () => useContext(CartContext);
 
-
-
 export function CartContextProvider( {children} ) {
     const [cart, setCart] = useState([]);
     const addToCart = ( item, cant ) => {
@@ -29,10 +27,27 @@ export function CartContextProvider( {children} ) {
     }
 }
 
+// Revisamos si el item está en el cart
+
 const isInCart = (id) => {
     return cart.some((item) => item.id === id);
   };
   
+// Obtenemos un item específico del cart
+
+  const getItemFromCart = (id) => {
+    return cart.find((item) => item.id === id);
+  };
+
+// Leemos la cantidad de unidades del item específico
+
+  const ItemCartCant = (id) => {
+    let prodInCart = cart.find((item) => item.id === id);
+    return prodInCart.cant;
+  };
+
+// Removemos un item del cart
+
     const removeFromCart = (id) => {
     const newCart = [...cart];
     const cartFilter = newCart.filter(item =>{
@@ -41,15 +56,17 @@ const isInCart = (id) => {
     setCart(cartFilter);
     }
     
+ // Vaciamos el cart   
     const clearCart = () => {
         setCart([]);
     }
 
     const contextFunction = () => console.log("Contexto listo");
 return (
-    <Provider value={ { contextFunction, cart, addToCart, removeFromCart, clearCart, isInCart } }>
+    <Provider value={ { contextFunction, cart, addToCart, removeFromCart, clearCart, isInCart, getItemFromCart, ItemCartCant } }>
     {children}
     </Provider>
+    
 )
 
 }
