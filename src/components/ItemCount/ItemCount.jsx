@@ -37,7 +37,6 @@ const handleOnAdd = () => {
     Button: false,
     timer: 2500
   })
-        
         onAdd(count);
     } 
 

@@ -27,11 +27,11 @@ if (detalle.picture === undefined) {
   return (
     <div className="container bootstrap snippets bootdey">
     <div className="row">
-      <div className="col-sm-6 col-md-6 push-bit">
+      <div className="col-sm-6 col-md-6 col-lg-6 push-bit">
         <img src={detalle.picture} width="700" heith="250" alt={detalle.name} className="img-fluid push-bit" />
         
       </div>
-      <div className="col-sm-6 col-md-6 push-bit">
+      <div className="col-sm-6 col-md-6 col-lg-6 push-bit">
         <div className="clearfix">
           <div className="pull-right">
           <h1><strong className="text-success">{detalle.name}</strong><br /></h1>
@@ -39,7 +39,6 @@ if (detalle.picture === undefined) {
             <span className="h2"><strong><Badge bg="success">Precio {detalle.price}$</Badge></strong></span>
           </div>
           <span className="h4">
-            
             <small><Badge bg="info">stock {detalle.stock}</Badge></small>
           </span>
         </div>

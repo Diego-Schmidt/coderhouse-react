@@ -60,9 +60,9 @@ else {
        <Link to="/">regresar al menú</Link>
        <p></p>
        <p></p>
-       <div><Badge bg="info"><h5>Total de items: {itemsTotal()}</h5></Badge></div>
+       <div><Badge bg="info"><h6>Total de items: {itemsTotal()}</h6></Badge></div>
        <p></p>
-        <div><Badge bg="info"><h5>Costo Total: {precioTotal()} $</h5></Badge></div>
+        <div><Badge bg="info"><h6>Costo Total: {precioTotal()} $</h6></Badge></div>
        <p></p>
        <p>
          <Button onClick={handleVaciar}>Vaciar carrito</Button>
@@ -80,9 +80,9 @@ else {
                   <Card.Img variant="top" src={itemCart.picture} />
                   <Card.Body>
                     <Card.Text> {itemCart.ingredients} </Card.Text>
-                    <Badge bg="success"><h3>Precio Unidad {itemCart.price} $</h3></Badge>
+                    <Badge bg="success"><h6>x1 {itemCart.price} $</h6></Badge>
                     <p></p>
-                    <Badge bg="info"><h3>Precio x {itemCart.cant} {itemCart.price * itemCart.cant} $</h3></Badge>
+                    <Badge bg="info"><h6>x{itemCart.cant} {itemCart.price * itemCart.cant} $</h6></Badge>
                   </Card.Body>
                   <Button onClick={handleRemove} className="btn btn-danger">Eliminar</Button>
                 </Card>
