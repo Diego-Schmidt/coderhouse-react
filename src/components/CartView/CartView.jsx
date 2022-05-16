@@ -54,19 +54,7 @@ else {
   return (
     <section id="carrito" className="py-5 text-center container">
    <div className="row py-lg-5">
-     <div className="col-12">
-       <p>{greeting}</p>
-       <p></p>
-       <Link to="/">regresar al menú</Link>
-       <p></p>
-       <p></p>
-       <div><Badge bg="info"><h6>Total de items: {itemsTotal()}</h6></Badge></div>
-       <p></p>
-        <div><Badge bg="info"><h6>Costo Total: {precioTotal()} $</h6></Badge></div>
-       <p></p>
-       <p>
-         <Button onClick={handleVaciar}>Vaciar carrito</Button>
-       </p>
+    <div><Badge bg="info" className="m-3"><h6>Total de items: {itemsTotal()}</h6></Badge><Badge className="m-3" bg="info"><h6> Costo Total: {precioTotal()} $</h6></Badge><div></div><div><Link to="/">regresar al catálogo</Link></div> 
      </div>
    </div>
    <div className="album py-5 bg-warning">
@@ -75,7 +63,7 @@ else {
         {cart.map( itemCart => {
         return (
               <Container key={itemCart.id}>
-                <Card className="bg-warning shadow-lg p-3 mb-3 mr-2 ml-2 rounded">
+                <Card className="bg-warning shadow-lg p-3 mb-3 mr-2 ml-2 rounded text-center">
                   <Card.Title>{itemCart.name} x{itemCart.cant}</Card.Title>
                   <Card.Img variant="top" src={itemCart.picture} />
                   <Card.Body>
@@ -83,8 +71,9 @@ else {
                     <Badge bg="success"><h6>x1 {itemCart.price} $</h6></Badge>
                     <p></p>
                     <Badge bg="info"><h6>x{itemCart.cant} {itemCart.price * itemCart.cant} $</h6></Badge>
+                    <p></p>
+                    <Button onClick={handleRemove} className="btn btn-danger w-50">Eliminar</Button>
                   </Card.Body>
-                  <Button onClick={handleRemove} className="btn btn-danger">Eliminar</Button>
                 </Card>
               </Container>
         )
@@ -92,7 +81,9 @@ else {
       })}
       </div>
             </div>
+            
           </div>
+          <Button className="m-3 bg-danger" onClick={handleVaciar}> Vaciar carrito</Button><Button className="bg-success m3">Pagar</Button>
         </section>
     )
   }

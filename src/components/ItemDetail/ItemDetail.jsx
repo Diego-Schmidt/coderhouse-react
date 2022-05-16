@@ -31,7 +31,7 @@ if (detalle.picture === undefined) {
         <img src={detalle.picture} width="700" heith="250" alt={detalle.name} className="img-fluid push-bit" />
         
       </div>
-      <div className="col-sm-6 col-md-6 col-lg-6 push-bit">
+      <div className="col-sm-6 col-md-6 col-lg-6 push-bit text-center">
         <div className="clearfix">
           <div className="pull-right">
           <h1><strong className="text-success">{detalle.name}</strong><br /></h1>
@@ -57,7 +57,7 @@ if (detalle.picture === undefined) {
           <Link to="/cart"><Badge bg="success"><h5>Ver carrito</h5></Badge></Link> 
           </>
           :
-        <ItemCount onAdd={onAdd} stock={detalle.stock} initial={1} itemName={detalle.name} />
+        <ItemCount onAdd={onAdd} stock={detalle.stock} initial={1} itemName={detalle.name}/>
         
       }
         

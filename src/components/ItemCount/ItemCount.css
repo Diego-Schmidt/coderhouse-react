@@ -1,3 +1,10 @@
 .producto{
 width: 18rem;
 }
+.counter-input {
+    width: 40px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    text-align: center;
+  }
