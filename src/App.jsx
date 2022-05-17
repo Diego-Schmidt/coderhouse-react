@@ -1,3 +1,4 @@
+import React from 'react';
 import './App.css';
 import NavBar from './components/NavBar/NavBar'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
@@ -6,9 +7,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import { HashRouter, Route, Routes }  from 'react-router-dom';
 import { CartContextProvider } from './store/CartContext';
+import Footer from './components/Footer';
+
 
 
 function App() {
+  
   return (
     <>
     <CartContextProvider>
@@ -30,6 +34,7 @@ function App() {
           </div>
          </div>
       </main>
+      <Footer />
       </HashRouter>
       </CartContextProvider>
     </>

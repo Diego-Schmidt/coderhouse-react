@@ -15,4 +15,15 @@
     text-align: center;
     line-height: 17px;
   }
-  
+  .mostrar-cantidad2 {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    color: #E79D58;
+    background-color: #E79D58;
+    border-radius: 50%;
+    font-size: 12px;
+    position: relative;
+    text-align: center;
+    line-height: 17px;
+  }

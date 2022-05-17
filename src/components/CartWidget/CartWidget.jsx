@@ -13,7 +13,7 @@ function CartWidget(props) {
       {/* Acá puede ir cualquier ícono que quieran. En mi caso, estoy usando FontAwesome para React JS. */}
       <FontAwesomeIcon icon={faCartShopping} size="2x" color="black" />
       { itemsTotal()? <div className="mostrar-cantidad">{itemsTotal()}</div>
-      : null }
+      : <div className="mostrar-cantidad2">{itemsTotal()}</div> }
 
     </div>
 </LinkContainer>

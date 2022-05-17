@@ -5,25 +5,22 @@ import { Link } from 'react-router-dom';
 // import css from './ItemDetail.css';
 import useCartContext from '../../store/CartContext';
 
-
-
-
-
-
 function ItemDetail({  detalle } ) {
   const [isInCart, setIsInCart] = useState(false);
   const { addToCart } = useCartContext();
   function onAdd(count) {    
-    console.log(`Agregaste ${count} ${detalle.name} al carrito`);
+    
     setIsInCart(true);
     addToCart(detalle, count);
-    console.log("Agregado al carrito", detalle, count);
-
+    
 }
 
-if (detalle.picture === undefined) { 
-  return <Spinner animation="border" role="status"> <span className="visually-hidden">Cargando...</span></Spinner>
-}
+if(detalle.picture === undefined){
+  return <Spinner animation="border" role="status">
+  <span className="visually-hidden">Loading...</span>
+  </Spinner>
+  }
+
   return (
     <div className="container bootstrap snippets bootdey">
     <div className="row">
@@ -32,7 +29,7 @@ if (detalle.picture === undefined) {
         
       </div>
       <div className="col-sm-6 col-md-6 col-lg-6 push-bit text-center">
-        <div className="clearfix">
+        <div className="clearfix py-3">
           <div className="pull-right">
           <h1><strong className="text-success">{detalle.name}</strong><br /></h1>
           <h3><strong className="text-success">{detalle.category}</strong><br /></h3>
@@ -43,17 +40,17 @@ if (detalle.picture === undefined) {
           </span>
         </div>
         <hr />
-        <p>
+        <span>
           {detalle.description}
-        </p>
-        <p>
+        </span>
+        <span>
           {detalle.ingredients}
-        </p>
+        </span>
         <hr />
         { isInCart? 
           <>
           {/* <ItemCount onAdd={onAdd} stock={detalle.stock} initial={1} itemName={detalle.name} /> */}
-          <p></p>
+          <span></span>
           <Link to="/cart"><Badge bg="success"><h5>Ver carrito</h5></Badge></Link> 
           </>
           :
