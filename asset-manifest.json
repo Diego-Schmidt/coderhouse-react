@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/coderhouse-react/static/css/main.84168c0c.css",
-    "main.js": "/coderhouse-react/static/js/main.d9beabac.js",
+    "main.js": "/coderhouse-react/static/js/main.864ae0a1.js",
     "static/js/787.c285b863.chunk.js": "/coderhouse-react/static/js/787.c285b863.chunk.js",
     "static/media/logo.webp": "/coderhouse-react/static/media/logo.31c5442b01f1a5c30e92.webp",
     "index.html": "/coderhouse-react/index.html",
     "main.84168c0c.css.map": "/coderhouse-react/static/css/main.84168c0c.css.map",
-    "main.d9beabac.js.map": "/coderhouse-react/static/js/main.d9beabac.js.map",
+    "main.864ae0a1.js.map": "/coderhouse-react/static/js/main.864ae0a1.js.map",
     "787.c285b863.chunk.js.map": "/coderhouse-react/static/js/787.c285b863.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.84168c0c.css",
-    "static/js/main.d9beabac.js"
+    "static/js/main.864ae0a1.js"
   ]
 }
