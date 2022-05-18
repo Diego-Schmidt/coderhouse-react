@@ -1,6 +1,6 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button, Card, Badge, Container, Spinner } from 'react-bootstrap';
+import { Button, Card, Badge, Container } from 'react-bootstrap';
 import useCartContext from '../../store/CartContext';
 import { Link } from 'react-router-dom';
 import swal from 'sweetalert';
@@ -61,9 +61,7 @@ else {
      <div className="container">
        <div className="row row-cols-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-3 g-3">
         {cart.map( itemCart => {
-          if (itemCart.picture === undefined) { 
-            return <Spinner animation="border" role="status"> <span className="visually-hidden">Cargando...</span></Spinner>
-          }
+          
         return (
               <Container key={itemCart.id}>
                 <Card className="bg-warning shadow-lg p-3 mb-3 mr-2 ml-2 rounded text-center">
