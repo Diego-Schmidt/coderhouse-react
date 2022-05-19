@@ -32,6 +32,10 @@ export function CartContextProvider( {children} ) {
 const isInCart = (id) => {
     return cart.some((item) => item.id === id);
   };
+
+  const estaEnCarrito = (id) => {
+    return cart.some((item) => item.id === id);
+  };
   
 // Obtenemos un item específico del cart
 
@@ -41,11 +45,18 @@ const isInCart = (id) => {
 
 // Leemos la cantidad de unidades del item específico
 
-const cantItems = (id) => {   
-    const total = 0;
-    cart.forEach(item => total + item.cant);
-    return total;
-    };
+// get item quantity
+const getItemQuantity = (id) => {
+    const item = getItemFromCart(id);
+    return item ? item.cant : 0;
+  };
+
+
+// const cantItems = (id) => {   
+//     const total = 0;
+//     cart.forEach(item => total + item.cant);
+//     return total;
+//     };
 
     function precioTotal() {
         let total = 0;
@@ -61,10 +72,9 @@ const cantItems = (id) => {
 
     
 
-  const ItemCartCant = (id) => {
-    let prodInCart = cart.find((item) => item.id === id);
-    return prodInCart.cant;
-  };
+      // const itemInCartCant = (id) => {
+      //   return cart.some((item) => item.cant === id);
+      // };
 
 // Removemos un item del cart
 
@@ -83,7 +93,7 @@ const cantItems = (id) => {
 
     const contextFunction = () => console.log("Contexto listo");
 return (
-    <Provider value={ { contextFunction, cart, addToCart, removeFromCart, clearCart, isInCart, getItemFromCart, ItemCartCant, cantItems, precioTotal, itemsTotal } }>
+    <Provider value={ { contextFunction, cart, estaEnCarrito, addToCart, removeFromCart, clearCart, isInCart, getItemFromCart, getItemQuantity, precioTotal, itemsTotal } }>
     {children}
     </Provider>
     

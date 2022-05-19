@@ -7,7 +7,8 @@ import useCartContext from '../../store/CartContext';
 
 function ItemDetail({  detalle } ) {
   const [isInCart, setIsInCart] = useState(false);
-  const { addToCart } = useCartContext();
+  const { addToCart, estaEnCarrito } = useCartContext();
+  const { getItemQuantity } = useCartContext();
   function onAdd(count) {    
     
     setIsInCart(true);
@@ -36,7 +37,11 @@ if(detalle.picture === undefined){
             <span className="h2"><strong><Badge bg="success">Precio {detalle.price}$</Badge></strong></span>
           </div>
           <span className="h4">
-            <small><Badge bg="info">stock {detalle.stock}</Badge></small>
+          {estaEnCarrito(detalle.id) ? 
+            <><small className="pe-1"><Badge>En carrito {getItemQuantity(detalle.id)}</Badge></small><small><Badge bg="info">stock {detalle.stock}</Badge></small></>
+            :
+            <><small className="pe-1"><Badge>En carrito 0</Badge></small><small><Badge bg="info">stock {detalle.stock}</Badge></small></>
+          }
           </span>
         </div>
         <hr />
@@ -47,7 +52,7 @@ if(detalle.picture === undefined){
           {detalle.ingredients}
         </span>
         <hr />
-        { isInCart? 
+        {isInCart? 
           <>
           {/* <ItemCount onAdd={onAdd} stock={detalle.stock} initial={1} itemName={detalle.name} /> */}
           <span></span>

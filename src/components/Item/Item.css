@@ -1,4 +1,4 @@
-.card {
+/* .card {
     height: 350px;
     width: 250px;
     text-align: center;
@@ -28,4 +28,21 @@ img {
     width: 100%;
     height: 100%;
     object-fit: contain;
-}
+} */
+.mostrar-cantidadItem {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    color: #E79D58;
+    background-color: #ffffff;
+    border-radius: 50%;
+    font-size: 12px;
+    position: relative;
+    text-align: center;
+    line-height: 17px;
+  }
+  .cart-icon2 {
+    position: relative;
+    cursor: pointer;
+    text-align: center;
+  }
