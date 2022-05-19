@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Badge } from 'react-bootstrap';
+import { Badge, Button } from 'react-bootstrap';
 import ItemCount from '../ItemCount/ItemCount';
 import { Link } from 'react-router-dom';
 import LoadingSpinner from '../LoadingSpinner/';
@@ -57,7 +57,8 @@ if(detalle.picture === undefined){
           <>
           {/* <ItemCount onAdd={onAdd} stock={detalle.stock} initial={1} itemName={detalle.name} /> */}
           <span></span>
-          <Link to="/cart"><Badge bg="success"><h5>Ver carrito</h5></Badge></Link> 
+          <ItemCount onAdd={onAdd} stock={detalle.stock} initial={1} itemName={detalle.name}/>
+          <Link className="ps-2" to="/cart"><Button>Ver carrito</Button></Link> 
           </>
           :
         <ItemCount onAdd={onAdd} stock={detalle.stock} initial={1} itemName={detalle.name}/>
