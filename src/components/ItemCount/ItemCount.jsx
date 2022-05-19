@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
-import swal from 'sweetalert';
+import Swal from 'sweetalert2'
 import './ItemCount.css';
 
 
@@ -15,7 +15,22 @@ const ItemCount = ({stock, initial, onAdd, itemName}) => {
       
       
     } else {
-        swal("No hay stock suficiente", "", "error");
+      const Toast = Swal.mixin({
+        toast: true,
+        background: '#DFA822',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
+      
+      Toast.fire({
+        icon: 'error',
+        title: 'No hay stock suficiente'
+      })
     } 
 
   }
@@ -29,13 +44,21 @@ const ItemCount = ({stock, initial, onAdd, itemName}) => {
   }
 
 const handleOnAdd = () => {
-  swal({
-    position: 'center',
-    icon: 'success',
+  const Toast = Swal.mixin({
+    toast: true,
     background: '#DFA822',
-    title: `${count} ${itemName} agregado al carrito`,
-    Button: false,
-    timer: 2500
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer)
+      toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+  })
+  
+  Toast.fire({
+    icon: 'success',
+    title: `${count} ${itemName} agregado al carrito`
   })
         onAdd(count);
     } 

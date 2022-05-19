@@ -11,18 +11,19 @@ function Item({ item, stock, name, price, ingredients, picture, category } ) {
   return (
     <Card className="bg-warning shadow-lg p-3 mb-3 mr-2 ml-2 rounded">
     <Card.Title>{category}/{name} </Card.Title>
+    <span className="position-absolute top-4 end-4 translate-middle badge rounded-pill bg-info">{isInCart(item) ?
+    <><div className="cart-icon2"><FontAwesomeIcon icon={faCartShopping} size="1x" color="black" /><div className="mostrar-cantidadItem">{getItemQuantity(item)}</div></div></>
+    :
+    <><div className="cart-icon2"><FontAwesomeIcon icon={faCartShopping} size="1x" color="black" /><div className="mostrar-cantidadItem">0</div></div></>
+}</span>
     <Card.Img variant="top" src={picture} />
     <Card.Body>
+    
     <Card.Text>
       Ingredientes: {ingredients}
     </Card.Text>
     <Badge bg="success">{price} $</Badge>
-    <p></p>
-    <Badge>Stock {stock}</Badge>{isInCart(item) ?
-    <><div className="cart-icon2"><FontAwesomeIcon icon={faCartShopping} size="1x" color="black" /><div className="mostrar-cantidadItem">{getItemQuantity(item)}</div></div></>
-    :
-    <div className="mostrar-cantidad2 d-none">{getItemQuantity(item)}</div>
-}
+    <Badge className="m-2">Stock {stock}</Badge>
     </Card.Body>
     <LinkContainer to={`/item/${item}`}><Button className="btn btn-info">Ver detalles</Button></LinkContainer>
 

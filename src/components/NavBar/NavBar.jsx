@@ -19,7 +19,7 @@ function NavBar(props) {
 <nav>
 <Navbar expanded={expanded} className="headlogbg" bg="light" expand="lg">
   <Container>
-  <LinkContainer to="/"><Navbar.Brand><img className="navbar-brand" src={logo} width="150px" alt="logo" /></Navbar.Brand></LinkContainer>
+  <LinkContainer to="/"><Navbar.Brand className="swirl-in-fwd"><img className="navbar-brand" src={logo} width="150px" alt="logo" /></Navbar.Brand></LinkContainer>
   
     <Navbar.Toggle onClick={() => setExpanded(expanded ? false : "expanded")} aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">

@@ -3,34 +3,54 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, Card, Badge, Container } from 'react-bootstrap';
 import useCartContext from '../../store/CartContext';
 import { Link } from 'react-router-dom';
-import swal from 'sweetalert';
-
+import Swal from 'sweetalert2'
+import { useState } from 'react';
+import './CartView.css';
 
 function CartView({ greeting }) {
     const { cart, removeFromCart, clearCart, itemsTotal, precioTotal } = useCartContext();
+    const [isActive, setActive] = useState(false);
 
     const handleVaciar = () => {
-      swal({
-        position: 'center',
-        icon: 'success',
+      const Toast = Swal.mixin({
+        toast: true,
         background: '#DFA822',
-        title: `Carrito vaciado`,
-        Button: false,
-        timer: 2500
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
+      
+      Toast.fire({
+        icon: 'success',
+        title: 'Carrito vaciado'
       })
       clearCart();
         } 
 
         const handleRemove = () => {
           cart.forEach(itemCart => {
-          swal({
-            position: 'center',
-            icon: 'success',
-            background: '#DFA822',
-            title: `${itemCart.cant} ${itemCart.name} quitada del carrito`,
-            Button: false,
-            timer: 2500
-          })
+          setActive(isActive);
+         const Toast = Swal.mixin({
+    toast: true,
+    background: '#DFA822',
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer)
+      toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+  })
+  
+  Toast.fire({
+    icon: 'success',
+    title: `${itemCart.cant} ${itemCart.name} eliminado del carrito`
+  })
+          
           removeFromCart(itemCart.id)
         })
         
@@ -52,9 +72,9 @@ function CartView({ greeting }) {
 }
 else { 
   return (
-    <section id="carrito" className="py-5 text-center container">
-   <div className="row py-lg-5">
-    <div><Badge bg="info" className="m-3"><h6>Total de items: {itemsTotal()}</h6></Badge><Badge className="m-3" bg="info"><h6> Costo Total: {precioTotal()} $</h6></Badge><div></div><div><Link to="/">regresar al catálogo</Link></div> 
+    <section id="carrito" className="py-2 text-center container">
+   <div className="row py-lg-2">
+    <div><Badge bg="info" className="m-1"><h6>Total de items: {itemsTotal()}</h6></Badge><Badge className="m-3" bg="info"><h6> Costo Total: {precioTotal()} $</h6></Badge><div></div><div><Link to="/">regresar al catálogo</Link></div> 
      </div>
    </div>
    <div className="album py-5">
@@ -63,18 +83,15 @@ else {
         {cart.map( itemCart => {
           
         return (
-              <Container key={itemCart.id}>
+              <Container id={itemCart.id} className={isActive ? 'bounce-out-top': null}  key={itemCart.id}>
                 <Card className="bg-warning shadow-lg p-3 mb-3 mr-2 ml-2 rounded text-center">
                   <Card.Title>{itemCart.name} x{itemCart.cant}</Card.Title>
                   <Card.Img variant="top" src={itemCart.picture} />
                   <Card.Body>
                     <Card.Text>Categoría: {itemCart.category} </Card.Text>
-                    <Card.Text>Ingredientes: {itemCart.ingredients} </Card.Text>
-                    <Badge bg="success"><h6>x1 {itemCart.price} $</h6></Badge>
-                    <p></p>
-                    <Badge bg="info"><h6>x{itemCart.cant} {itemCart.price * itemCart.cant} $</h6></Badge>
-                    <p></p>
-                    <Button onClick={handleRemove} className="btn btn-danger w-50">Eliminar</Button>
+                    <Badge className="m-1" bg="success"><h6>x1 {itemCart.price} $</h6></Badge>
+                    <Badge className="m-1" bg="info"><h6>x{itemCart.cant} {itemCart.price * itemCart.cant} $</h6></Badge>
+                    <Button onClick={handleRemove} className="btn btn-danger w-50 mt-3">Eliminar</Button>
                   </Card.Body>
                 </Card>
               </Container>

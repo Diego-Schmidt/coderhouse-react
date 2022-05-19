@@ -93,7 +93,7 @@ const getItemQuantity = (id) => {
 
     const contextFunction = () => console.log("Contexto listo");
 return (
-    <Provider value={ { contextFunction, cart, estaEnCarrito, addToCart, removeFromCart, clearCart, isInCart, getItemFromCart, getItemQuantity, precioTotal, itemsTotal } }>
+    <Provider value={ { contextFunction, estaEnCarrito, cart, addToCart, removeFromCart, clearCart, isInCart, getItemFromCart, getItemQuantity, precioTotal, itemsTotal } }>
     {children}
     </Provider>
     

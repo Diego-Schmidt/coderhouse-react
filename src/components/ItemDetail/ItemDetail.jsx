@@ -4,6 +4,9 @@ import ItemCount from '../ItemCount/ItemCount';
 import { Link } from 'react-router-dom';
 // import css from './ItemDetail.css';
 import useCartContext from '../../store/CartContext';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
+
 
 function ItemDetail({  detalle } ) {
   const [isInCart, setIsInCart] = useState(false);
@@ -26,6 +29,11 @@ if(detalle.picture === undefined){
     <div className="container bootstrap snippets bootdey">
     <div className="row">
       <div className="col-sm-6 col-md-6 col-lg-6 push-bit">
+      <span className="position-absolute top-10 end-90 translate-middle badge rounded-pill bg-info">{estaEnCarrito(detalle.id) ?
+    <><div className="cart-icon2"><FontAwesomeIcon icon={faCartShopping} size="3x" color="black" /><div className="mostrar-cantidadItem">{getItemQuantity(detalle.id)}</div></div></>
+    :
+    <><div className="cart-icon2"><FontAwesomeIcon icon={faCartShopping} size="3x" color="black" /><div className="mostrar-cantidadItem">0</div></div></>
+}</span>
         <img src={detalle.picture} width="700" heith="250" alt={detalle.name} className="img-fluid push-bit" />
         
       </div>
@@ -37,11 +45,6 @@ if(detalle.picture === undefined){
             <span className="h2"><strong><Badge bg="success">Precio {detalle.price}$</Badge></strong></span>
           </div>
           <span className="h4">
-          {estaEnCarrito(detalle.id) ? 
-            <><small className="pe-1"><Badge>En carrito {getItemQuantity(detalle.id)}</Badge></small><small><Badge bg="info">stock {detalle.stock}</Badge></small></>
-            :
-            <><small className="pe-1"><Badge>En carrito 0</Badge></small><small><Badge bg="info">stock {detalle.stock}</Badge></small></>
-          }
           </span>
         </div>
         <hr />
