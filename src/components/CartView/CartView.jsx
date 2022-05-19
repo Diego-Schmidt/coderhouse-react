@@ -35,6 +35,9 @@ function CartView({ greeting }) {
         const handleRemove = () => {
           cart.forEach(itemCart => {
           setActive(isActive);
+          function pluralizeWord(singularWord, pluralWord) {
+            return itemCart.cant > 1 ? pluralWord : singularWord;
+          }
          const Toast = Swal.mixin({
     toast: true,
     background: '#DFA822',
@@ -49,7 +52,7 @@ function CartView({ greeting }) {
   
   Toast.fire({
     icon: 'success',
-    title: `${itemCart.cant} ${itemCart.name} eliminado del carrito`
+    title: `${itemCart.cant} ${itemCart.name} ${pluralizeWord("eliminada", "eliminadas")} del carrito`
   })
           
           removeFromCart(itemCart.id)

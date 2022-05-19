@@ -8,7 +8,9 @@ import './ItemCount.css';
 
 const ItemCount = ({stock, initial, onAdd, itemName}) => {
   const [count, setCount] = useState(initial)
-
+  function pluralizeWord(singularWord, pluralWord) {
+    return count > 1 ? pluralWord : singularWord;
+  }
   const handleAgregar = () => {
     if (count < stock) {
       setCount(count + 1)
@@ -55,10 +57,9 @@ const handleOnAdd = () => {
       toast.addEventListener('mouseleave', Swal.resumeTimer)
     }
   })
-  
   Toast.fire({
     icon: 'success',
-    title: `${count} ${itemName} agregado al carrito`
+    title: `${count} ${itemName} ${pluralizeWord("agregada", "agregadas")} al carrito`
   })
         onAdd(count);
     } 
