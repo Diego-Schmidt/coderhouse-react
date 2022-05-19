@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import { Button } from 'react-bootstrap';
+import './ItemListContainer.css';
 import ItemList from '../ItemList/ItemList.jsx';
 import { useParams } from 'react-router-dom';
 import { getAllItems as getProductos, getItemsByCategory} from '../../data'
@@ -36,7 +36,7 @@ if(loading){
   
 }
 return (
-        <section id="menu" className="py-2 text-center container">
+        <section id="menu" className="py-2 text-center container slide-in-fwd-center">
         <div className="album py-5">
         <div className="container">
           <div className="row row-cols-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-3 g-3">
