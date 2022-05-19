@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { Badge, Spinner } from 'react-bootstrap';
+import { Badge } from 'react-bootstrap';
 import ItemCount from '../ItemCount/ItemCount';
 import { Link } from 'react-router-dom';
-// import css from './ItemDetail.css';
+import LoadingSpinner from '../LoadingSpinner/';
 import useCartContext from '../../store/CartContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
@@ -20,13 +20,11 @@ function ItemDetail({  detalle } ) {
 }
 
 if(detalle.picture === undefined){
-  return <Spinner animation="border" role="status">
-  <span className="visually-hidden">Loading...</span>
-  </Spinner>
+  return <LoadingSpinner />
   }
 
   return (
-    <div className="container bootstrap snippets bootdey">
+    <div className="container bootstrap snippets bootdey slide-in-fwd-center">
     <div className="row">
       <div className="col-sm-6 col-md-6 col-lg-6 push-bit">
       <span className="position-absolute top-10 end-90 translate-middle badge rounded-pill bg-info">{estaEnCarrito(detalle.id) ?

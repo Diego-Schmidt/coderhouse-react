@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2'
 import { useState } from 'react';
 import './CartView.css';
+import habemus from '../../assets/images/habemuspet.webp';
 
 function CartView({ greeting }) {
     const { cart, removeFromCart, clearCart, itemsTotal, precioTotal } = useCartContext();
@@ -64,6 +65,7 @@ function CartView({ greeting }) {
       <div className="row py-lg-5">
           <div className="col-12">
           <p>No hay items en su carrito</p>
+          <img src={habemus} alt="habemus" className="img-fluid" />
           <p></p>
           <Link to="/">regresar al menú</Link>
         </div>
@@ -72,7 +74,7 @@ function CartView({ greeting }) {
 }
 else { 
   return (
-    <section id="carrito" className="py-2 text-center container">
+    <section id="carrito" className="py-2 text-center container slide-in-fwd-center">
    <div className="row py-lg-2">
     <div><Badge bg="info" className="m-1"><h6>Total de items: {itemsTotal()}</h6></Badge><Badge className="m-3" bg="info"><h6> Costo Total: {precioTotal()} $</h6></Badge><div></div><div><Link to="/">regresar al catálogo</Link></div> 
      </div>
