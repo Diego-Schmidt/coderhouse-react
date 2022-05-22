@@ -11,7 +11,7 @@ function ItemList({ items }) {
     <>
     { items.map(thisitem => {
       return (
-  <Container key={thisitem.id}>
+  <Container key={thisitem.id} className="borde">
   <Item picture={thisitem.picture} category={thisitem.category} stock={thisitem.stock} item={thisitem.id} name={thisitem.name} description={thisitem.description} ingredients={thisitem.ingredients} price={thisitem.price}/>
   </Container>
       )

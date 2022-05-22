@@ -8,6 +8,7 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import { HashRouter, Route, Routes }  from 'react-router-dom';
 import { CartContextProvider } from './store/CartContext';
 import Footer from './components/Footer';
+import CheckOut from './components/CheckOut/';
 
 
 
@@ -20,6 +21,7 @@ function App() {
       <NavBar />
       <main>
       <Routes>
+        <Route path="/checkout" element={<CheckOut />} />
         <Route path="/item/:itemid" element={<ItemDetailContainer greeting="Detalle de producto"/>} />  
         <Route path="/" element={<ItemListContainer greeting="Menú de Habemus Papa!"/>} />
         <Route path="/cart" element={<CartView greeting="Este es su carrito"/>} / >

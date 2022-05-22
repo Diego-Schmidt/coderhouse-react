@@ -21,8 +21,8 @@ const ItemCount = ({stock, initial, onAdd, itemName}) => {
         toast: true,
         background: '#DFA822',
         showConfirmButton: false,
-        timer: 3000,
-        timerProgressBar: true,
+        timer: 2000,
+        timerProgressBar: false,
         didOpen: (toast) => {
           toast.addEventListener('mouseenter', Swal.stopTimer)
           toast.addEventListener('mouseleave', Swal.resumeTimer)
@@ -50,8 +50,8 @@ const handleOnAdd = () => {
     toast: true,
     background: '#DFA822',
     showConfirmButton: false,
-    timer: 3000,
-    timerProgressBar: true,
+    timer: 2000,
+    timerProgressBar: false,
     didOpen: (toast) => {
       toast.addEventListener('mouseenter', Swal.stopTimer)
       toast.addEventListener('mouseleave', Swal.resumeTimer)

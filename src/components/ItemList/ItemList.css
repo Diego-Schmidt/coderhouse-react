@@ -1,3 +1,6 @@
 .fondo-container{
     background-color: #E89D5B;
 }
+.borde:hover{
+    border: 5px solid #50f76b;
+}

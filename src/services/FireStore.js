@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, doc, getDoc, query, where, collection, getDocs  } from "firebase/firestore/lite";
+import { getFirestore, doc, getDoc, addDoc, query, where, collection, getDocs, Timestamp  } from "firebase/firestore/lite";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCjNJ8byRcdPzjX4KgoNdjuo7LYCpTWPQQ",
@@ -54,3 +54,15 @@ export async function getItem(id){
         }
     
 };
+
+export async function createBuyOrder(orderData){
+    const buyTimeStamp = Timestamp.now();
+    const orderWithDate = {
+        ...orderData,
+        date: buyTimeStamp
+    };
+    const miColec = collection(fireStoreDb,'buyOrders');
+    const orderDoc = await addDoc(miColec, orderWithDate);
+    console.log("Orden lista con el id ",orderDoc.id);
+    return orderDoc.id;   
+}

@@ -3,10 +3,10 @@ import habemus from '../../assets/images/habemuspet.webp';
 
 function LoadingSpinner() {
   return (
-    <Container><Spinner animation="border" role="status">
+    <Container><img src={habemus} alt="habemus" className="img-fluid" /><Spinner animation="border" role="status">
   <span className="visually-hidden">Cargando...</span>
 </Spinner>
-<img src={habemus} alt="habemus" className="img-fluid" />
+
 </Container>
   )
 }

@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './ItemListContainer.css';
 import ItemList from '../ItemList/ItemList.jsx';
 import { useParams } from 'react-router-dom';
-import { getAllItems as getProductos, getItemsByCategory} from '../../data'
+import { getAllItems as getProductos, getItemsByCategory} from '../../services/FireStore.js';
 import LoadingSpinner from '../LoadingSpinner/';
 
 

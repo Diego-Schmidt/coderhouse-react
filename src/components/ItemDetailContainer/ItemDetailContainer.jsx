@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemDetail from '../ItemDetail/ItemDetail.jsx';
 import { useParams } from 'react-router-dom';
-import { getItem as getProducto } from '../../data'
+import { getItem as getProducto } from '../../services/FireStore.js'
 
 function ItemDetailContainer( {greeting, items} ) {
     const [producto, setProducto] = useState([]);

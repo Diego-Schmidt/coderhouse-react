@@ -8,17 +8,20 @@ import { useState } from 'react';
 import './CartView.css';
 import habemus from '../../assets/images/habemuspet.webp';
 
+
 function CartView({ greeting }) {
     const { cart, removeFromCart, clearCart, itemsTotal, precioTotal } = useCartContext();
     const [isActive, setActive] = useState(false);
 
+    
+    
     const handleVaciar = () => {
       const Toast = Swal.mixin({
         toast: true,
         background: '#DFA822',
         showConfirmButton: false,
-        timer: 3000,
-        timerProgressBar: true,
+        timer: 2000,
+        timerProgressBar: false,
         didOpen: (toast) => {
           toast.addEventListener('mouseenter', Swal.stopTimer)
           toast.addEventListener('mouseleave', Swal.resumeTimer)
@@ -42,8 +45,8 @@ function CartView({ greeting }) {
     toast: true,
     background: '#DFA822',
     showConfirmButton: false,
-    timer: 3000,
-    timerProgressBar: true,
+    timer: 2000,
+    timerProgressBar: false,
     didOpen: (toast) => {
       toast.addEventListener('mouseenter', Swal.stopTimer)
       toast.addEventListener('mouseleave', Swal.resumeTimer)
@@ -91,7 +94,7 @@ else {
               <Container id={itemCart.id} className={isActive ? 'bounce-out-top': null}  key={itemCart.id}>
                 <Card className="bg-warning shadow-lg p-3 mb-3 mr-2 ml-2 rounded text-center">
                   <Card.Title>{itemCart.name} x{itemCart.cant}</Card.Title>
-                  <Card.Img variant="top" src={itemCart.picture} />
+                  <Card.Img variant="top" src={itemCart.picture} alt={itemCart.name} />
                   <Card.Body>
                     <Card.Text>Categoría: {itemCart.category} </Card.Text>
                     <Badge className="m-1" bg="success"><h6>x1 {itemCart.price} $</h6></Badge>
@@ -107,7 +110,7 @@ else {
             </div>
             
           </div>
-          <Button className="m-3 bg-danger" onClick={handleVaciar}> Vaciar carrito</Button><Button className="bg-success m3">Pagar</Button>
+          <Button className="m-3 bg-danger" onClick={handleVaciar}> Vaciar carrito</Button><Link to="/checkout"><Button className="bg-success m3">Ir al pago</Button></Link> 
         </section>
     )
   }
