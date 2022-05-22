@@ -14,10 +14,12 @@ function ItemListContainer( {greeting, items} ) {
    
     useEffect(() => {
         if (categoryid === undefined) {
+     document.title = 'Habemus Papa! Catálogo';       
     getProductos().then(respuestaPromise => {
         setProductos(respuestaPromise);
         setLoading(false);
     }); } else {
+        document.title = `Habemus Papa! ${categoryid}`;
     getItemsByCategory(categoryid).then(respuestaPromise => {
         setProductos(respuestaPromise);
         setLoading(false);

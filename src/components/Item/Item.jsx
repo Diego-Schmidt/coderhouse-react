@@ -16,7 +16,7 @@ function Item({ item, stock, name, price, ingredients, picture, category } ) {
     :
     <><div className="cart-icon2"><FontAwesomeIcon icon={faCartShopping} size="1x" color="black" /><div className="mostrar-cantidadItem">0</div></div></>
 }</span>
-    <Card.Img variant="top" src={picture} alt={name} />
+<LinkContainer to={`/item/${item}`}><Card.Img className="picHover" variant="top" src={picture} alt={name} /></LinkContainer>
     <Card.Body>
     
     <Card.Text>

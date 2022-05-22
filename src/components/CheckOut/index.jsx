@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import habemus from '../../assets/images/habemuspet.webp';
 
 function CheckOut() {
+    document.title = `Habemus Papa! Pago y envío`;
     const { cart, clearCart, itemsTotal, precioTotal } = useCartContext();
     const [OrderID, setOrderID] = useState();
     
@@ -58,17 +59,19 @@ function CheckOut() {
         total: precioTotal(),
       }
       createBuyOrder(buyOrder).then(response => {
+        
         Swal.fire({
             icon: 'success',
             title: `Compra realizada con éxito id ${response}`,
             text: 'Gracias por su compra',
             })
-            setOrderID(response);
+            
             
       })
       // Agrego un setTimeout para que se vacíe el carrito luego de mostrar el Swal con el id de la compra
       setTimeout(() => {
         clearCart();
+        setOrderID(true);
       }, 3000);
             
     }
