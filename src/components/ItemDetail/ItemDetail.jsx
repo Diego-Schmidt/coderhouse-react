@@ -10,7 +10,7 @@ import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
 
 function ItemDetail({  detalle } ) {
-  document.title = `Habemus Papa! ${detalle.category}/${detalle.name}`;
+  
   const [isInCart, setIsInCart] = useState(false);
   const { addToCart, estaEnCarrito } = useCartContext();
   const { getItemQuantity } = useCartContext();
@@ -25,7 +25,7 @@ if(detalle.picture === undefined){
   return <LoadingSpinner />
   }
 
-
+  document.title = `Habemus Papa! ${detalle.category}/${detalle.name}`;
 
   return (
     <div className="container bootstrap snippets bootdey slide-in-fwd-center">
