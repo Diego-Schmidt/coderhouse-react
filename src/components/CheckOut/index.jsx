@@ -16,9 +16,9 @@ function CheckOut() {
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
 
-    // States for checking the errors
+    // Estados para manejar los errores
   const [submitted, setSubmitted] = useState(false);
-  const [error, setError] = useState(false);
+  const [errorMsg, setErrormsg] = useState(false);
 
     // Handle para el campo de nombre
   const handleNombre = (e) => {
@@ -55,7 +55,6 @@ function CheckOut() {
           email: `${email}`,
         },
         items: itemsToBuy,
-        // date: new Date(),
         total: precioTotal(),
       }
       createBuyOrder(buyOrder).then(response => {
@@ -66,25 +65,56 @@ function CheckOut() {
             footer: '<a href="/">Regresar al menú</a>'
             })
             setOrderID(response);
+            
       })
-       
-            clearCart();
+      // Agrego un setTimeout para que se vacíe el carrito luego de mostrar el Swal con el id de la compra
+      setTimeout(() => {
+        clearCart();
+      }, 3000);
+            
     }
 
 
 
-    // Handling the form submission
+    // Handle para el formulario de datos del cliente
     const handleSubmit = (e) => {
         e.preventDefault();
         if (nombre === '' || email === '' || phone === '') {
-          setError(true);
+        setErrormsg(true);
          
         } else {
           setSubmitted(true);
-          setError(false);
+          setErrormsg(false);
           handleBuy();
         }
       };
+
+ // Mostrar mensaje de éxito
+ const successMessage = () => {
+    return (
+      <div
+        className="success"
+        style={{
+          display: submitted ? '' : 'none',
+        }}>
+        <h1>Pago exitoso</h1>
+      </div>
+    );
+  };
+ 
+  // Mostrar mensaje de error si algo male sal
+  const errorMessage = () => {
+    return (
+      <div
+        className="error"
+        style={{
+          display: errorMsg ? '' : 'none',
+        }}>
+        <h1>Por favor complete los campos</h1>
+      </div>
+    );
+  };
+
 
     
         if (cart.length === 0) {
@@ -113,6 +143,10 @@ function CheckOut() {
     <main>
       <div className="py-3 text-center">
         <h2>Checkout</h2>
+        <div className="messages">
+        {errorMessage()}
+        {successMessage()}
+      </div>
         <p className="lead">Su lista de compra y formulario de pago.</p>
       </div>
       <div className="row g-5">
