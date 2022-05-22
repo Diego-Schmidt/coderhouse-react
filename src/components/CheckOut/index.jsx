@@ -62,7 +62,6 @@ function CheckOut() {
             icon: 'success',
             title: `Compra realizada con éxito id ${response}`,
             text: 'Gracias por su compra',
-            footer: '<a href="/">Regresar al menú</a>'
             })
             setOrderID(response);
             

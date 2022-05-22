@@ -23,6 +23,7 @@ function ItemListContainer( {greeting, items} ) {
         setLoading(false);
     }); }   
     }, [categoryid]);
+    
 if(loading){
   return <section id="menu" className="py-5 text-center container">
         

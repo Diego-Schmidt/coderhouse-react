@@ -8,6 +8,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
 
+
+
 function ItemDetail({  detalle } ) {
   const [isInCart, setIsInCart] = useState(false);
   const { addToCart, estaEnCarrito } = useCartContext();

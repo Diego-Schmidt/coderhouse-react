@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, Card, Badge, Container } from 'react-bootstrap';
 import useCartContext from '../../store/CartContext';
@@ -63,7 +63,12 @@ function CartView({ greeting }) {
         
             } 
 
-
+            useEffect(() => {
+              function setTitle(title){
+              document.title = title;  
+              }
+              setTitle("Habemus Papas! -- Carrito");
+            }, []);
 
     
     if (cart.length === 0) {
