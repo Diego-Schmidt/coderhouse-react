@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/coderhouse-react/static/css/main.ee821e72.css",
-    "main.js": "/coderhouse-react/static/js/main.9333e9d9.js",
+    "main.js": "/coderhouse-react/static/js/main.66442282.js",
     "static/js/787.c285b863.chunk.js": "/coderhouse-react/static/js/787.c285b863.chunk.js",
     "static/media/logo.webp": "/coderhouse-react/static/media/logo.31c5442b01f1a5c30e92.webp",
     "static/media/habemuspet.webp": "/coderhouse-react/static/media/habemuspet.84fb5e771ce60345aa8a.webp",
     "index.html": "/coderhouse-react/index.html",
     "main.ee821e72.css.map": "/coderhouse-react/static/css/main.ee821e72.css.map",
-    "main.9333e9d9.js.map": "/coderhouse-react/static/js/main.9333e9d9.js.map",
+    "main.66442282.js.map": "/coderhouse-react/static/js/main.66442282.js.map",
     "787.c285b863.chunk.js.map": "/coderhouse-react/static/js/787.c285b863.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ee821e72.css",
-    "static/js/main.9333e9d9.js"
+    "static/js/main.66442282.js"
   ]
 }
