@@ -3,9 +3,19 @@ import { Link } from 'react-router-dom';
 import servicioscta1 from '../../assets/images/servicioscta1.webp';
 import servicioscta2 from '../../assets/images/servicioscta2.webp';
 import '../../assets/css/animaciones.css'
+import LoadingSpinner from '../../components/LoadingSpinner'
 
 function Servicios() {
     document.title = 'Habemus Papa! Servicios';
+    if(servicioscta2 === undefined){
+        return <section id="menu" className="py-5 text-center container">
+        <div className="album bg-degrade py-5">
+        <div className="container">
+          <div className="">
+          <LoadingSpinner />
+          </div></div></div>
+      </section>
+    }
   return (
     <section className="slide-in-fwd-center">
   <section>

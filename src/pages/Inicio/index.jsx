@@ -7,9 +7,23 @@ import combo2 from '../../assets/images/combo2.webp';
 import combo3 from '../../assets/images/combo3.webp';
 import './Inicio.css'
 import '../../assets/css/animaciones.css'
+import LoadingSpinner from '../../components/LoadingSpinner/';
+
 
 function Inicio() {
+  
   document.title = 'Habemus Papa! Inicio';
+
+
+  if(combo3 === undefined){
+    return <section id="menu" className="py-5 text-center container">
+    <div className="album bg-degrade py-5">
+    <div className="container">
+      <div className="">
+      <LoadingSpinner />
+      </div></div></div>
+  </section>
+  }
   return (
 <div>
   <section className="heroportada position-relative pt-48 pb-40 bg-dark bg-cover bg-size--cover slide-in-fwd-center">

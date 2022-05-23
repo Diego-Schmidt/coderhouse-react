@@ -7,9 +7,19 @@ import vvd from '../../assets/images/vvd.webp';
 import habeft from '../../assets/images/habeft.webp';
 import { Link } from 'react-router-dom';
 import '../../assets/css/animaciones.css'
+import LoadingSpinner from '../../components/LoadingSpinner';
 
 function Acerca() {
     document.title = 'Habemus Papa! Acerca de Nosotros';
+    if(habeft === undefined){
+        return <section id="menu" className="py-5 text-center container">
+        <div className="album bg-degrade py-5">
+        <div className="container">
+          <div className="">
+          <LoadingSpinner />
+          </div></div></div>
+      </section>
+    }
     return (
         <div className="slide-in-fwd-center">
         <div className="container marketing">
