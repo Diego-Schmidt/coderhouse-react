@@ -9,7 +9,10 @@ import { HashRouter, Route, Routes }  from 'react-router-dom';
 import { CartContextProvider } from './store/CartContext';
 import Footer from './components/Footer';
 import CheckOut from './components/CheckOut/';
-
+import Inicio from './pages/Inicio';
+import Servicios from './pages/Servicios';
+import Acerca from './pages/Acerca';
+import Contacto from './pages/Contacto';
 
 
 function App() {
@@ -21,6 +24,10 @@ function App() {
       <NavBar />
       <main>
       <Routes>
+        <Route path="/inicio" element={<Inicio />} />
+        <Route path="/servicios" element={<Servicios />} />
+        <Route path="/acercade" element={<Acerca />} />
+        <Route path="/contacto" element={<Contacto />} />
         <Route path="/checkout" element={<CheckOut />} />
         <Route path="/item/:itemid" element={<ItemDetailContainer greeting="Detalle de producto"/>} />  
         <Route path="/" element={<ItemListContainer greeting="Menú de Habemus Papa!"/>} />

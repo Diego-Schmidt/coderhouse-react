@@ -24,7 +24,7 @@ function NavBar(props) {
     <Navbar.Toggle onClick={() => setExpanded(expanded ? false : "expanded")} aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="me-auto">
-        <LinkContainer onClick={() => setExpanded(false)} to="/"><Nav.Link href="#home">Inicio</Nav.Link></LinkContainer>
+        <LinkContainer onClick={() => setExpanded(false)} to="/inicio"><Nav.Link href="#home">Inicio</Nav.Link></LinkContainer>
         <NavDropdown title="Menú" id="basic-nav-dropdown">
         <LinkContainer onClick={() => setExpanded(false)} to="/"><NavDropdown.Item>Todo</NavDropdown.Item></LinkContainer>  
         <LinkContainer onClick={() => setExpanded(false)} to="/category/hamburguesas"><NavDropdown.Item>Hamburguesas</NavDropdown.Item></LinkContainer>
@@ -33,9 +33,9 @@ function NavBar(props) {
           <NavDropdown.Divider />
           <LinkContainer onClick={() => setExpanded(false)} to="/category/bebidas"><NavDropdown.Item>Bebidas</NavDropdown.Item></LinkContainer>
         </NavDropdown>
-        <Nav.Link href="#link">Servicios</Nav.Link>
-        <Nav.Link href="#link">Acerca</Nav.Link>
-        <Nav.Link href="#link">Contacto</Nav.Link>
+        <LinkContainer onClick={() => setExpanded(false)} to="/servicios"><Nav.Link href="/servicios">Servicios</Nav.Link></LinkContainer>
+        <LinkContainer onClick={() => setExpanded(false)} to="/acercade"><Nav.Link href="/acercade">Acerca</Nav.Link></LinkContainer>
+        <LinkContainer onClick={() => setExpanded(false)} to="/contacto"><Nav.Link href="/contacto">Contacto</Nav.Link></LinkContainer>
         
       </Nav>
       

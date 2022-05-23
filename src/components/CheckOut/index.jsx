@@ -99,7 +99,7 @@ function CheckOut() {
         style={{
           display: submitted ? '' : 'none',
         }}>
-        <h1>Pago exitoso</h1>
+        <h1 className="bg-success text-white">Pago exitoso</h1>
       </div>
     );
   };
@@ -112,7 +112,8 @@ function CheckOut() {
         style={{
           display: errorMsg ? '' : 'none',
         }}>
-        <h1>Por favor complete los campos</h1>
+        <h1 className="bg-danger text-white">Por favor complete los campos</h1>
+        
       </div>
     );
   };
@@ -145,10 +146,6 @@ function CheckOut() {
     <main>
       <div className="py-3 text-center">
         <h2>Checkout</h2>
-        <div className="messages">
-        {errorMessage()}
-        {successMessage()}
-      </div>
         <p className="lead">Su lista de compra y formulario de pago.</p>
       </div>
       <div className="row g-5">
@@ -177,6 +174,10 @@ function CheckOut() {
         </div>
         <div className="col-md-7 col-lg-8">
           <h4 className="mb-3">Datos del cliente</h4>
+          <div className="messages">
+        {errorMessage()}
+        {successMessage()}
+      </div>
           <form className="needs-validation" noValidate>
             <div className="row g-3">
               <div className="col-sm-12">
@@ -186,10 +187,10 @@ function CheckOut() {
                   Nombre requerido
                 </div>
               </div>
-          
+              
               <div className="col-12">
                 <label htmlFor="email" className="form-label">Email <span className="text-muted"></span></label>
-                <input onChange={handleEmail} value={email} type="email" className="form-control input" id="email" placeholder="Su email" />
+                <input onChange={handleEmail} value={email} type="email" className="form-control input" id="email" placeholder="Su email" required />
                 <div className="invalid-feedback">
                   Por favor introduzca un email válido.
                 </div>
