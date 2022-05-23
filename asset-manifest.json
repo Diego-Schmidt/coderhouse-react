@@ -1,17 +1,30 @@
 {
   "files": {
-    "main.css": "/coderhouse-react/static/css/main.ee821e72.css",
-    "main.js": "/coderhouse-react/static/js/main.66442282.js",
+    "main.css": "/coderhouse-react/static/css/main.3c55a37a.css",
+    "main.js": "/coderhouse-react/static/js/main.8480aa43.js",
     "static/js/787.c285b863.chunk.js": "/coderhouse-react/static/js/787.c285b863.chunk.js",
+    "static/media/servicioscta1.webp": "/coderhouse-react/static/media/servicioscta1.93d63dde08b5f4d7212a.webp",
+    "static/media/heroportada.webp": "/coderhouse-react/static/media/heroportada.75f22782c8dcafb33328.webp",
+    "static/media/servicioscta2.webp": "/coderhouse-react/static/media/servicioscta2.22b7f73460ec969cf1e0.webp",
+    "static/media/habeft.webp": "/coderhouse-react/static/media/habeft.25023af12267bee72533.webp",
+    "static/media/vvd.webp": "/coderhouse-react/static/media/vvd.d8b3b120d8b8b6dbab2f.webp",
+    "static/media/owner2.webp": "/coderhouse-react/static/media/owner2.80de95f0038208c68d80.webp",
     "static/media/logo.webp": "/coderhouse-react/static/media/logo.31c5442b01f1a5c30e92.webp",
+    "static/media/combo1.webp": "/coderhouse-react/static/media/combo1.8a4ea6bd9165b3c5349f.webp",
+    "static/media/combo3.webp": "/coderhouse-react/static/media/combo3.1c662a3943430b35cfe1.webp",
+    "static/media/combo2.webp": "/coderhouse-react/static/media/combo2.229d77662c55d9c2bf4a.webp",
+    "static/media/habemuscomiendo.webp": "/coderhouse-react/static/media/habemuscomiendo.84fb5e771ce60345aa8a.webp",
     "static/media/habemuspet.webp": "/coderhouse-react/static/media/habemuspet.84fb5e771ce60345aa8a.webp",
+    "static/media/owner.webp": "/coderhouse-react/static/media/owner.4670fb618923e4411ddc.webp",
+    "static/media/cheff2.webp": "/coderhouse-react/static/media/cheff2.4350bf9ee25734e1ee65.webp",
+    "static/media/cheff.webp": "/coderhouse-react/static/media/cheff.dda5ba236c0ce7987f6a.webp",
     "index.html": "/coderhouse-react/index.html",
-    "main.ee821e72.css.map": "/coderhouse-react/static/css/main.ee821e72.css.map",
-    "main.66442282.js.map": "/coderhouse-react/static/js/main.66442282.js.map",
+    "main.3c55a37a.css.map": "/coderhouse-react/static/css/main.3c55a37a.css.map",
+    "main.8480aa43.js.map": "/coderhouse-react/static/js/main.8480aa43.js.map",
     "787.c285b863.chunk.js.map": "/coderhouse-react/static/js/787.c285b863.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ee821e72.css",
-    "static/js/main.66442282.js"
+    "static/css/main.3c55a37a.css",
+    "static/js/main.8480aa43.js"
   ]
 }
