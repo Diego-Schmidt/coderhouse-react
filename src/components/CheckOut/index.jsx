@@ -5,6 +5,8 @@ import useCartContext from '../../store/CartContext';
 import Swal from 'sweetalert2'
 import { Link } from 'react-router-dom';
 import habemus from '../../assets/images/habemuspet.webp';
+import '../../assets/css/animaciones.css'
+
 
 function CheckOut() {
     document.title = `Habemus Papa! Pago y envío`;
@@ -77,19 +79,33 @@ function CheckOut() {
     }
 
 
+// Funciones para verificar los inputs del formulario de cliente y mostrar los errores (si los hay) 
+
+    function onlyLettersAndSpaces(str) {
+      return /^[A-Za-z\s]*$/.test(str);
+    }
+    function containsArroba(str) {
+      const tieneArroba = /@/;
+      return tieneArroba.test(str);
+    }
+
+    function onlyNumbers(str) {
+      return /^[0-9]+$/.test(str);
+    }
+    
 
     // Handle para el formulario de datos del cliente
     const handleSubmit = (e) => {
-        e.preventDefault();
-        if (nombre === '' || email === '' || phone === '') {
-        setErrormsg(true);
-         
-        } else {
-          setSubmitted(true);
-          setErrormsg(false);
-          handleBuy();
-        }
-      };
+      e.preventDefault();
+      if (!onlyLettersAndSpaces(nombre) || nombre === '' || !containsArroba(email) || email === '' || !onlyNumbers(phone) || phone === '') {
+      setErrormsg(true);
+       
+      } else {
+        setSubmitted(true);
+        setErrormsg(false);
+        handleBuy();
+      }
+    };
 
  // Mostrar mensaje de éxito
  const successMessage = () => {
@@ -99,7 +115,7 @@ function CheckOut() {
         style={{
           display: submitted ? '' : 'none',
         }}>
-        <h1 className="bg-success text-white">Pago exitoso</h1>
+        <h4 className="bg-success text-white scale-in-ver-center">Pago exitoso</h4>
       </div>
     );
   };
@@ -112,7 +128,7 @@ function CheckOut() {
         style={{
           display: errorMsg ? '' : 'none',
         }}>
-        <h1 className="bg-danger text-white">Por favor complete los campos</h1>
+        <h4 className="bg-danger text-white scale-in-ver-center">Por favor complete todos los campos correctamente</h4>
         
       </div>
     );
@@ -178,7 +194,8 @@ function CheckOut() {
         {errorMessage()}
         {successMessage()}
       </div>
-          <form className="needs-validation" noValidate>
+      
+          <form className="needs-validation">
             <div className="row g-3">
               <div className="col-sm-12">
                 <label htmlFor="firstName" className="form-label">Nombres y apellidos</label>
@@ -190,14 +207,14 @@ function CheckOut() {
               
               <div className="col-12">
                 <label htmlFor="email" className="form-label">Email <span className="text-muted"></span></label>
-                <input onChange={handleEmail} value={email} type="email" className="form-control input" id="email" placeholder="Su email" required />
+                <input onChange={handleEmail} value={email} type="email" className="form-control input" id="email" placeholder="Su@email" required />
                 <div className="invalid-feedback">
                   Por favor introduzca un email válido.
                 </div>
               </div>
               <div className="col-12">
                 <label htmlFor="phone" className="form-label">Teléfono</label>
-                <input onChange={handlePhone} value={phone} type="phone" className="form-control input"  id="phone" placeholder="Mi teléfono" required />
+                <input onChange={handlePhone} value={phone} type="phone" className="form-control input"  id="phone" placeholder="222446633" required />
                 <div className="invalid-feedback">
                   Por favor coloque su teléfono
                 </div>
@@ -208,6 +225,7 @@ function CheckOut() {
             <hr className="my-4" />
             <button onClick={handleSubmit} className="w-100 btn btn-primary btn-lg" type="submit">Pagar</button>
           </form>
+          
         </div>
       </div>
     </main>

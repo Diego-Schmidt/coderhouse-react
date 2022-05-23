@@ -6,12 +6,13 @@ import combo1 from '../../assets/images/combo1.webp';
 import combo2 from '../../assets/images/combo2.webp';
 import combo3 from '../../assets/images/combo3.webp';
 import './Inicio.css'
+import '../../assets/css/animaciones.css'
 
 function Inicio() {
   document.title = 'Habemus Papa! Inicio';
   return (
-<main>
-  <section className="heroportada position-relative pt-48 pb-40 bg-dark bg-cover bg-size--cover">
+<div>
+  <section className="heroportada position-relative pt-48 pb-40 bg-dark bg-cover bg-size--cover slide-in-fwd-center">
     {/* Overlay */}
     <span className="position-absolute top-0 start-0 w-full h-full bg-dark opacity-80" />
     {/* Contenido */}
@@ -129,7 +130,7 @@ function Inicio() {
           </div>
         </div></div></div></section>        
   
-</main>
+</div>
   )
 }
 

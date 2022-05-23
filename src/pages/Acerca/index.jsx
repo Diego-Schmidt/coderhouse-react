@@ -6,11 +6,12 @@ import owner2 from '../../assets/images/owner2.webp';
 import vvd from '../../assets/images/vvd.webp';
 import habeft from '../../assets/images/habeft.webp';
 import { Link } from 'react-router-dom';
+import '../../assets/css/animaciones.css'
 
 function Acerca() {
     document.title = 'Habemus Papa! Acerca de Nosotros';
     return (
-        <div>
+        <div className="slide-in-fwd-center">
         <div className="container marketing">
           <div className="row mx-auto align-middle text-center py-4">
             <div className="col-lg-4 mx-auto">

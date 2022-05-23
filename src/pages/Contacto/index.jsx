@@ -1,10 +1,11 @@
 import React from 'react'
 import './Contacto.css';
+import '../../assets/css/animaciones.css'
 
 function Contacto() {
     document.title = 'Habemus Papa! Contacto';
   return (
-    <section>
+    <section className="slide-in-fwd-center">
   {/* Formulario de contacto - no funcional basado en https://www.freecontactform.com/form-guides/html-email-form*/}
   <div className="container  mt-5 mb-5 ">
     <div className="row m-0">

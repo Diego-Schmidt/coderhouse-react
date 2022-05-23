@@ -2,11 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom'; 
 import servicioscta1 from '../../assets/images/servicioscta1.webp';
 import servicioscta2 from '../../assets/images/servicioscta2.webp';
+import '../../assets/css/animaciones.css'
 
 function Servicios() {
     document.title = 'Habemus Papa! Servicios';
   return (
-    <section>
+    <section className="slide-in-fwd-center">
   <section>
     <article>
       {/* Call to action o hero para mobile */}
