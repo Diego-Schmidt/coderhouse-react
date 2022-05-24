@@ -7,14 +7,17 @@
   </a>
 
   <h3 align="center">Habemus Papa! React - Curso de CoderHouse</h3>
+    <a href="http://www.youtube.com/watch?v=YfTgt29KcwE">
+    <img src="http://img.youtube.com/vi/YfTgt29KcwE/0.jpg" alt="habemuspapayoutube" >
+  </a>
 
   <p align="center">
     Readme en construcción
    
 </div>
-<p align="center">
-[![IMAGE ALT TEXT](http://img.youtube.com/vi/YfTgt29KcwE/0.jpg)](http://www.youtube.com/watch?v=YfTgt29KcwE "Video Title")
-</p>
+
+
+
 
 ### Echo con
 
