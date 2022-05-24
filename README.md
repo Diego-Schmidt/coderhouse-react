@@ -7,7 +7,9 @@
   </a>
 
   <h3 align="center">Habemus Papa! React - Curso de CoderHouse</h3>
-    <a href="http://www.youtube.com/watch?v=YfTgt29KcwE">
+<br />
+<h3 align="center">Video de navegación en la aplicación</h3>
+  <a href="http://www.youtube.com/watch?v=YfTgt29KcwE">
     <img src="http://img.youtube.com/vi/YfTgt29KcwE/0.jpg" alt="habemuspapayoutube" >
   </a>
 
