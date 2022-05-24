@@ -1,4 +1,5 @@
 <!-- PROJECT LOGO -->
+
 <br />
 <div align="center">
   <a href="https://github.com/Diego-Schmidt/coderhouse-react">
@@ -11,8 +12,9 @@
     Readme en construcción
    
 </div>
-
+<p align="center">
 [![IMAGE ALT TEXT](http://img.youtube.com/vi/YfTgt29KcwE/0.jpg)](http://www.youtube.com/watch?v=YfTgt29KcwE "Video Title")
+</p>
 
 ### Echo con
 
