@@ -45,18 +45,13 @@ const isInCart = (id) => {
 
 // Leemos la cantidad de unidades del item específico
 
-// get item quantity
 const getItemQuantity = (id) => {
     const item = getItemFromCart(id);
     return item ? item.cant : 0;
   };
 
 
-// const cantItems = (id) => {   
-//     const total = 0;
-//     cart.forEach(item => total + item.cant);
-//     return total;
-//     };
+// Obtenemos el precio total del carrito
 
     function precioTotal() {
         let total = 0;
@@ -69,12 +64,6 @@ const getItemQuantity = (id) => {
         cart.map(i => cantidad += i.cant);
         return cantidad;
       }
-
-    
-
-      // const itemInCartCant = (id) => {
-      //   return cart.some((item) => item.cant === id);
-      // };
 
 // Removemos un item del cart
 

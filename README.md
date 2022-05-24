@@ -12,6 +12,7 @@
    
 </div>
 
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/YfTgt29KcwE/0.jpg)](http://www.youtube.com/watch?v=YfTgt29KcwE "Video Title")
 
 ### Echo con
 
