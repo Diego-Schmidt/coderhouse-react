@@ -1,3 +1,4 @@
+import React from 'react';
 import { Spinner, Container } from 'react-bootstrap';
 import habemus from '../../assets/images/habemuspet.webp';
 
