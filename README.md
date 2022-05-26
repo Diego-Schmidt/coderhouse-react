@@ -9,7 +9,7 @@
 
   <h3 align="center">Habemus Papa! React - Curso de CoderHouse</h3>
 <br />
-<h3 align="center">Video de navegación en la aplicación</h3>
+<h3 align="center">Video de navegación en la aplicación (click para ver)</h3>
   <a href="http://www.youtube.com/watch?v=YfTgt29KcwE">
     <img src="http://img.youtube.com/vi/YfTgt29KcwE/0.jpg" alt="habemuspapayoutube" >
   </a>
@@ -32,7 +32,7 @@
 * [ReactJS]
 * [React-Bootstrap]
 * [Sweetalert2]
-* 
+* [Firebase]
 
 <!-- LICENSE -->
 ## License

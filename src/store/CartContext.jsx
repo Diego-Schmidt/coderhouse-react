@@ -80,7 +80,7 @@ const getItemQuantity = (id) => {
         setCart([]);
     }
 
-    const contextFunction = () => console.log("Contexto listo");
+    const contextFunction = () => {}
 return (
     <Provider value={ { contextFunction, estaEnCarrito, cart, addToCart, removeFromCart, clearCart, isInCart, getItemFromCart, getItemQuantity, precioTotal, itemsTotal } }>
     {children}
