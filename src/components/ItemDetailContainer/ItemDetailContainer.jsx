@@ -17,9 +17,9 @@ function ItemDetailContainer( {greeting, items} ) {
     }, [itemid]);
 
     return (
-        <section id="menu" className="py-5 text-center container">
+        <section id="menu" className="text-center container">
         
-        <div className="album bg-degrade py-5">
+        <div className="album bg-degrade">
         <div className="container">
           <div className="">
           <ItemDetail detalle={producto} />
