@@ -31,7 +31,7 @@ if(detalle.picture === undefined){
   document.title = `Habemus Papa! ${detalle.category}/${detalle.name}`;
 
   return (
-    <><div><Container className="d-flex text-center justify-content-center p-5"><Breadcrumb>
+    <><div><Container className="d-flex text-center justify-content-center p-5"><Breadcrumb listProps={{ className: "justify-content-center" }} className="justify-content-center">
       <Breadcrumb.Item linkAs={Link} linkProps={{ to: "/" }}>catálogo</Breadcrumb.Item>
       <Breadcrumb.Item linkAs={Link} linkProps={{ to: `${catPath}` }}>
         {detalle.category}

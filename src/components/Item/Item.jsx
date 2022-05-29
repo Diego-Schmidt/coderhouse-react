@@ -9,7 +9,7 @@ import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
 function Item({ item, stock, name, price, ingredients, picture, category } ) {
   const { getItemQuantity, isInCart } = useCartContext();
-  
+
 
   return (
     <Card key={item.id} className="bg-warning h-100 shadow-lg p-3 mb-3 mr-2 ml-2 rounded">
@@ -31,8 +31,6 @@ function Item({ item, stock, name, price, ingredients, picture, category } ) {
     <Badge className="mb-4 text-center">Stock {stock}</Badge>
     </Container>
     <LinkContainer to={`/item/${item}`}><Button className="btn btn-info">Ver detalles</Button></LinkContainer>
-    
-    
   </Card>
     
   )
