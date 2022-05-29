@@ -39,7 +39,7 @@ if(detalle.picture === undefined){
       <Breadcrumb.Item active>{detalle.name}</Breadcrumb.Item>
     </Breadcrumb></Container></div><div className="container bootstrap snippets bootdey slide-in-fwd-center">
         <div className="row">
-          <div className="col-sm-6 col-md-6 col-lg-6 push-bit align-middle h-100">
+          <div className="col-sm-6 col-md-6 col-lg-6 push-bit align-middle">
             <span className="position-absolute top-10 end-90 translate-middle badge rounded-pill bg-info">{estaEnCarrito(detalle.id) ?
               <><div className="cart-icon2"><FontAwesomeIcon icon={faCartShopping} size="3x" color="black" /><div className="mostrar-cantidadItem">{getItemQuantity(detalle.id)}</div></div></>
               :
