@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Card, Badge } from 'react-bootstrap';
+import { Button, Card, Badge, Container } from 'react-bootstrap';
 import {LinkContainer} from 'react-router-bootstrap';
 import useCartContext from '../../store/CartContext';
 import  './Item.css';
@@ -22,9 +22,11 @@ function Item({ item, stock, name, price, ingredients, picture, category } ) {
     <Card.Text>
       Ingredientes: {ingredients}
     </Card.Text>
-    <Badge bg="success">{price} $</Badge>
-    <Badge className="m-2">Stock {stock}</Badge>
     </Card.Body>
+    <Container className="d-flex justify-content-center text-center align-middle w-100 mw-30">
+    <Badge bg="success me-2 mb-4 text-center">{price} $</Badge>
+    <Badge className="mb-4 text-center">Stock {stock}</Badge>
+    </Container>
     <LinkContainer to={`/item/${item}`}><Button className="btn btn-info">Ver detalles</Button></LinkContainer>
 
   </Card>
