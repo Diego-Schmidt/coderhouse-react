@@ -26,21 +26,23 @@ Los componentes centrales para el desarrollo de la funcionalidad son: ItemListCo
 
 Comenzamos instalando el software necesario, NodeJS, npm, etc. Luego con el comando npx create-react-app para generar la estructura básica de un proyecto ReactJS.
 
-Agregando primer componente NavBar y un logo a la app, para tener una estructura primigénea que se asemeje a un sitio web. Decidí utilizar bootstrap y react-boostrap para darle estilo al sitio y poder reutilizar los estilos creados para el proyecto Habemus Papa! del curso de desarrollo web, también en CoderHouse. https://github.com/Diego-Schmidt/habemus-full-responsive/tree/habemus-sass
+Decidí reutilizar los diseños del proyecto Habemus Papa! que realizamos en el curso de Desarrollo Web también en CoderHouse https://github.com/Diego-Schmidt/habemus-full-responsive/tree/habemus-sass
 
-Decidí utilizar el módulo Gh-pages https://www.npmjs.com/package/gh-pages , este módulo automatiza la creación de un branch especial para que GitHub Pages pueda mostrar la parte web de la aplicación react. 
+Para crear la funcionalidad necesaria para un proyecto ecommerce con carrito tuvimos que crear varios componentes. NavBar, Footer, CartContext, CartWidget, Item, ItemList, ItemListContainer, ItemDetailContainer, ItemDetail, ItemCount, LoadingSpinner y CartView, CheckOut.
 
-Agregada funcionalidad de react-router-dom para crear las urls de las categorías y url de detella de producto, para ser usado en ItemListContainer (filtrar por categoría) e ItemDetail para acceder a un item del catálogo mediante su id.
-
-El componente ItemListContainer.jsx contiene la funcionalidad y lógica que envía información a otro componente llamado ItemList.jsx, encargado de leer y mapear un archivo mockup json con información sobre un catálogo de productos, en mi caso relacionados con la comida rápida y el componente Item.jsx, utilizado para pintar correctamente la información de cada producto que ItemList encuentre en el json.
-
-Luego de comprobar el funcionamiento correcto de esos componentes procedimos a la creación de ItemDetailContainer e ItemDetal.jsx, siguiendo una lógica similar a los componentes anteriores para mostrar más información de cada item, por ejemplo la descripción completa.
-
-Para darle estilo a todos los componentes decidí utilizar Bootstrap 5 y React-Boostrap.
-
-Creamos el componente CartContext para guardar el contenido del carrito y utilizarlo luego en el componente CartView y en el componente CheckOut. CarView nos muestra el contenido del carrito y CheckOut nos lleva al pago.
-
-
+Navbar = Componente que contiene los links para la navegación dentro de la app, el logo y el ícono del carrito.
+CartWidget = Componente del ícono del carrito de compras.
+Footer= Componente con el diseño del footer.
+CartContext = Componente con toda la programación para mostrar el estado del contenido del carrito de compras.
+Item = Componente que se encarga de generar el diseño de los ítems que se muestran en la lista del catálogo.
+ItemList = Componente que se encarga de pasarle los parámetros a Item para generar cada unidad en la lista del catálogo
+ItemListContainer = Componente con toda la lógica y programación para leer la base de datos y obtener los items.
+ItemDetailContainer = Componente con la funcionalidad necesaria para crear el ItemDetail, los detalles del producto.
+ItemDetail = Componente con los estilos necesarios para tomar la información que envía ItemDetailContainer.
+ItemCount = Componente para agregar o quitar n productos al carrito desde la sección de detalles del producto.
+LoaDingSpinner = Componente con estilos que muestra el clásico spinner cuando está cargando el contenido.
+CartView = Componente para generar el carrito de compras recibiendo la información que genera CartContext.
+CheckOut = Componente para generar el paso final del proceso de compras, donde el cliente ingresa sus datos y realiza el pago.
 
 
 
