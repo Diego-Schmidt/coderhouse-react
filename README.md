@@ -45,7 +45,7 @@ CartView = Componente para generar el carrito de compras recibiendo la informaci
 CheckOut = Componente para generar el paso final del proceso de compras, donde el cliente ingresa sus datos y realiza el pago.
 
 
-
+Agradezco a profesores y turores de CoderHouse por la guia y la buena onda en todos los cursos, durante el proceso de aprendizaje :D y también a todos los compañeros que me ayudaron y a los cuales ayudé.
 
 ### Echo con
 
