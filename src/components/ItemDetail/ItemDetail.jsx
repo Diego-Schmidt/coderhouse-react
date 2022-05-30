@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Badge, Button, Container, Breadcrumb } from 'react-bootstrap';
+import { Badge, Container, Breadcrumb } from 'react-bootstrap';
 import ItemCount from '../ItemCount/ItemCount';
 import { Link } from 'react-router-dom';
 import LoadingSpinner from '../LoadingSpinner/';
@@ -52,7 +52,13 @@ if(detalle.picture === undefined){
               <div className="pull-right">
                 <h1><strong className="text-success">{detalle.name}</strong><br /></h1>
                 <h3><strong className="text-success">{detalle.category}</strong><br /></h3>
-                <span className="h2"><strong><Badge bg="success">Precio {detalle.price}$</Badge></strong></span>
+                <span className="h2"><strong><Badge bg="success">Precio {detalle.price}$</Badge></strong>
+                {isInCart ?
+<Badge className="bg-secondary ms-2">x{getItemQuantity(detalle.id)} = {detalle.price * getItemQuantity(detalle.id)}$</Badge>
+:
+null}
+                </span>
+                <br />
               </div>
               <span className="h4">
               </span>
@@ -65,16 +71,7 @@ if(detalle.picture === undefined){
               {detalle.ingredients}
             </span>
             <hr />
-            {isInCart ?
-              <>
-                {/* <ItemCount onAdd={onAdd} stock={detalle.stock} initial={1} itemName={detalle.name} /> */}
-                <span></span>
-                <ItemCount onAdd={onAdd} stock={detalle.stock} initial={1} itemName={detalle.name} />
-                <Link className="ps-2" to="/cart"><Button>Ver carrito</Button></Link>
-              </>
-              :
-              <ItemCount onAdd={onAdd} stock={detalle.stock} initial={1} itemName={detalle.name} />}
-
+            <ItemCount onAdd={onAdd} stock={detalle.stock} initial={1} itemName={detalle.name} />
           </div>
         </div>
       </div></>

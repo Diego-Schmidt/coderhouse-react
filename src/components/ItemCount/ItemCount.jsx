@@ -62,6 +62,7 @@ const handleOnAdd = () => {
     title: `${count} ${itemName} ${pluralizeWord("agregada", "agregadas")} al carrito`
   })
         onAdd(count);
+        setCount(initial);
     } 
 
   return (
